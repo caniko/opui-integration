@@ -1,0 +1,142 @@
+{
+  "version": "0.8.0",
+  "children": [
+    {
+      "type": "frame",
+      "id": "artboard",
+      "name": "artboard",
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 720,
+      "fill": [{ "type": "solid", "color": "#0f172a" }],
+      "layout": "vertical",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "gap": 20,
+      "padding": 40,
+      "children": [
+        {
+          "type": "text",
+          "id": "title",
+          "name": "title",
+          "content": "Typography fidelity: Ångström · café · naïve · Ω",
+          "fontFamily": "Inter",
+          "fontSize": 38,
+          "fontWeight": 800,
+          "letterSpacing": 1.25,
+          "lineHeight": 1.15,
+          "textAlign": "center",
+          "fill": [{ "type": "solid", "color": "#ffffff" }]
+        },
+        {
+          "type": "frame",
+          "id": "weights",
+          "name": "weights",
+          "width": "fill_container",
+          "height": 72,
+          "layout": "horizontal",
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            { "type": "text", "id": "weight400", "content": "400 Regular", "fontFamily": "Inter", "fontSize": 22, "fontWeight": 400, "fill": [{ "type": "solid", "color": "#ffffff" }] },
+            { "type": "text", "id": "weight500", "content": "500 Medium", "fontFamily": "Inter", "fontSize": 22, "fontWeight": 500, "fill": [{ "type": "solid", "color": "#ffffff" }] },
+            { "type": "text", "id": "weight600", "content": "600 Semi", "fontFamily": "Inter", "fontSize": 22, "fontWeight": 600, "fill": [{ "type": "solid", "color": "#ffffff" }] },
+            { "type": "text", "id": "weight700", "content": "700 Bold", "fontFamily": "Inter", "fontSize": 22, "fontWeight": 700, "fill": [{ "type": "solid", "color": "#ffffff" }] },
+            { "type": "text", "id": "weight800", "content": "800 Extra", "fontFamily": "Inter", "fontSize": 22, "fontWeight": 800, "fill": [{ "type": "solid", "color": "#ffffff" }] }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "alignment",
+          "name": "alignment",
+          "width": "fill_container",
+          "height": 190,
+          "layout": "horizontal",
+          "gap": 20,
+          "children": [
+            {
+              "type": "text",
+              "id": "wrap_left_top",
+              "name": "wrap_left_top",
+              "width": "fill_container",
+              "height": "fill_container",
+              "content": "Long wrapped text checks line height, left alignment, top alignment, and the exact glyph metrics produced by the bundled Inter variable font across several lines.",
+              "fontFamily": "Inter",
+              "fontSize": 19,
+              "fontWeight": 400,
+              "letterSpacing": 0.5,
+              "lineHeight": 1.5,
+              "textAlign": "left",
+              "textAlignVertical": "top",
+              "textGrowth": "fixed-width-height",
+              "fill": [{ "type": "solid", "color": "#ffffff" }]
+            },
+            {
+              "type": "text",
+              "id": "wrap_center_middle",
+              "name": "wrap_center_middle",
+              "width": "fill_container",
+              "height": "fill_container",
+              "content": "Centered multiline text\nwith explicit vertical middle\nand high contrast.",
+              "fontFamily": "Inter",
+              "fontSize": 20,
+              "fontWeight": 600,
+              "lineHeight": 1.35,
+              "textAlign": "center",
+              "textAlignVertical": "middle",
+              "textGrowth": "fixed-width-height",
+              "fill": [{ "type": "solid", "color": "#ffffff" }]
+            },
+            {
+              "type": "text",
+              "id": "wrap_right_bottom",
+              "name": "wrap_right_bottom",
+              "width": "fill_container",
+              "height": "fill_container",
+              "content": "Right aligned\nitalic text\nat the bottom.",
+              "fontFamily": "Inter",
+              "fontSize": 21,
+              "fontWeight": 700,
+              "fontStyle": "italic",
+              "lineHeight": 1.25,
+              "textAlign": "right",
+              "textAlignVertical": "bottom",
+              "textGrowth": "fixed-width-height",
+              "fill": [{ "type": "solid", "color": "#ffffff" }]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "mixed_runs",
+          "name": "mixed_runs",
+          "width": "fill_container",
+          "content": [
+            { "text": "Mixed ", "fontFamily": "Inter", "fontSize": 24, "fontWeight": 400, "fill": "#ffffff" },
+            { "text": "bold ", "fontFamily": "Inter", "fontSize": 24, "fontWeight": 700, "fill": "#ffffff" },
+            { "text": "italic ", "fontFamily": "Inter", "fontSize": 24, "fontWeight": 500, "fontStyle": "italic", "fill": "#ffffff" },
+            { "text": "runs", "fontFamily": "Inter", "fontSize": 24, "fontWeight": 800, "fill": "#38bdf8" }
+          ],
+          "textAlign": "center"
+        },
+        {
+          "type": "text",
+          "id": "sparse_runs",
+          "name": "sparse_runs",
+          "width": "fill_container",
+          "fontFamily": "Inter",
+          "fontSize": 18,
+          "fontWeight": 400,
+          "fill": [{ "type": "solid", "color": "#ffffff" }],
+          "content": [
+            { "text": "Inherited defaults, " },
+            { "text": "one override", "fontWeight": 700 },
+            { "text": ", then defaults again." }
+          ],
+          "textAlign": "center"
+        }
+      ]
+    }
+  ]
+}

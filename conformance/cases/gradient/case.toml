@@ -1,0 +1,9 @@
+id = "gradient"
+source = "fixtures/cases/gradient.op"
+entrypoint = "default"
+viewports = ["1280x720"]
+capability_requirements = ["layout.flex", "paint.linear-gradient", "paint.radial-gradient"]
+visual = true
+release_blocking = true
+smoke = false
+notes = "cardinal linear gradients; CSS 0=up"

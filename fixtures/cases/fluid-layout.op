@@ -1,0 +1,45 @@
+{
+  "version": "0.8.0",
+  "children": [
+    {
+      "type": "frame",
+      "id": "artboard",
+      "name": "artboard",
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 720,
+      "fill": [{ "type": "solid", "color": "#0f172a" }],
+      "children": [
+        {
+          "type": "frame",
+          "id": "row",
+          "name": "row",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "horizontal",
+          "gap": 16,
+          "padding": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "left",
+              "name": "left",
+              "width": "30%",
+              "height": "fill_container",
+              "fill": [{ "type": "solid", "color": "#1e293b" }]
+            },
+            {
+              "type": "frame",
+              "id": "right",
+              "name": "right",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": [{ "type": "solid", "color": "#334155" }]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

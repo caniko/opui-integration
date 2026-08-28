@@ -1,0 +1,185 @@
+{
+  "sourceSha256": "8ef371ddef251073af05b5f5cdefa8ee19f4af711519c01da326d1d2ed74a8fe",
+  "entrypoints": {
+    "app": "app.root"
+  },
+  "nodes": [
+    { "nodeId": "n1", "runtimeId": "app.root" },
+    { "nodeId": "n2", "runtimeId": "screen.main_menu" },
+    { "nodeId": "n46", "runtimeId": "screen.settings" },
+    { "nodeId": "n110", "runtimeId": "screen.hud" },
+    { "nodeId": "n131", "runtimeId": "screen.pause" },
+    { "nodeId": "n112", "runtimeId": "hud.player_name" },
+    { "nodeId": "n113", "runtimeId": "hud.score" },
+    { "nodeId": "n126", "runtimeId": "hud.turn" },
+    { "nodeId": "n129", "runtimeId": "hud.health" },
+    { "nodeId": "n130", "runtimeId": "hud.status" },
+    { "nodeId": "n51", "runtimeId": "settings.fullscreen" },
+    { "nodeId": "n63", "runtimeId": "settings.music" },
+    {
+      "nodeId": "n7",
+      "type": "frame",
+      "runtimeId": "main_menu.play",
+      "role": "button",
+      "accessibilityLabel": "Play",
+      "tabIndex": 0,
+      "visualStates": {
+        "default": { "nodeId": "n8" },
+        "hover": { "nodeId": "n10" },
+        "pressed": { "nodeId": "n12" },
+        "disabled": { "nodeId": "n14" },
+        "focused": { "nodeId": "n16" }
+      }
+    },
+    {
+      "nodeId": "n18",
+      "type": "frame",
+      "runtimeId": "main_menu.settings",
+      "role": "button",
+      "accessibilityLabel": "Settings",
+      "tabIndex": 1,
+      "visualStates": {
+        "default": { "nodeId": "n19" },
+        "hover": { "nodeId": "n21" },
+        "pressed": { "nodeId": "n23" },
+        "disabled": { "nodeId": "n25" },
+        "focused": { "nodeId": "n27" }
+      }
+    },
+    {
+      "nodeId": "n29",
+      "type": "frame",
+      "runtimeId": "main_menu.quit",
+      "role": "button",
+      "accessibilityLabel": "Quit",
+      "tabIndex": 2,
+      "visualStates": {
+        "default": { "nodeId": "n30" },
+        "hover": { "nodeId": "n32" },
+        "pressed": { "nodeId": "n34" },
+        "disabled": { "nodeId": "n36" },
+        "focused": { "nodeId": "n38" }
+      }
+    },
+    {
+      "nodeId": "n52",
+      "type": "frame",
+      "runtimeId": "settings.toggle_fullscreen",
+      "role": "button",
+      "accessibilityLabel": "Toggle fullscreen",
+      "tabIndex": 3,
+      "visualStates": {
+        "default": { "nodeId": "n53" },
+        "hover": { "nodeId": "n55" },
+        "pressed": { "nodeId": "n57" },
+        "disabled": { "nodeId": "n59" },
+        "focused": { "nodeId": "n61" }
+      }
+    },
+    {
+      "nodeId": "n65",
+      "type": "frame",
+      "runtimeId": "settings.music_down",
+      "role": "button",
+      "accessibilityLabel": "Decrease music volume",
+      "tabIndex": 4,
+      "visualStates": {
+        "default": { "nodeId": "n66" },
+        "hover": { "nodeId": "n68" },
+        "pressed": { "nodeId": "n70" },
+        "disabled": { "nodeId": "n72" },
+        "focused": { "nodeId": "n74" }
+      }
+    },
+    {
+      "nodeId": "n76",
+      "type": "frame",
+      "runtimeId": "settings.music_up",
+      "role": "button",
+      "accessibilityLabel": "Increase music volume",
+      "tabIndex": 5,
+      "visualStates": {
+        "default": { "nodeId": "n77" },
+        "hover": { "nodeId": "n79" },
+        "pressed": { "nodeId": "n81" },
+        "disabled": { "nodeId": "n83" },
+        "focused": { "nodeId": "n85" }
+      }
+    },
+    {
+      "nodeId": "n88",
+      "type": "frame",
+      "runtimeId": "settings.back",
+      "role": "button",
+      "accessibilityLabel": "Back",
+      "tabIndex": 6,
+      "visualStates": {
+        "default": { "nodeId": "n89" },
+        "hover": { "nodeId": "n91" },
+        "pressed": { "nodeId": "n93" },
+        "disabled": { "nodeId": "n95" },
+        "focused": { "nodeId": "n97" }
+      }
+    },
+    {
+      "nodeId": "n99",
+      "type": "frame",
+      "runtimeId": "settings.apply",
+      "role": "button",
+      "accessibilityLabel": "Apply settings",
+      "tabIndex": 7,
+      "visualStates": {
+        "default": { "nodeId": "n100" },
+        "hover": { "nodeId": "n102" },
+        "pressed": { "nodeId": "n104" },
+        "disabled": { "nodeId": "n106" },
+        "focused": { "nodeId": "n108" }
+      }
+    },
+    {
+      "nodeId": "n114",
+      "type": "frame",
+      "runtimeId": "hud.pause",
+      "role": "button",
+      "accessibilityLabel": "Pause game",
+      "tabIndex": 8,
+      "visualStates": {
+        "default": { "nodeId": "n115" },
+        "hover": { "nodeId": "n117" },
+        "pressed": { "nodeId": "n119" },
+        "disabled": { "nodeId": "n121" },
+        "focused": { "nodeId": "n123" }
+      }
+    },
+    {
+      "nodeId": "n133",
+      "type": "frame",
+      "runtimeId": "pause.resume",
+      "role": "button",
+      "accessibilityLabel": "Resume game",
+      "tabIndex": 9,
+      "visualStates": {
+        "default": { "nodeId": "n134" },
+        "hover": { "nodeId": "n136" },
+        "pressed": { "nodeId": "n138" },
+        "disabled": { "nodeId": "n140" },
+        "focused": { "nodeId": "n142" }
+      }
+    },
+    {
+      "nodeId": "n144",
+      "type": "frame",
+      "runtimeId": "pause.menu",
+      "role": "button",
+      "accessibilityLabel": "Return to main menu",
+      "tabIndex": 10,
+      "visualStates": {
+        "default": { "nodeId": "n145" },
+        "hover": { "nodeId": "n147" },
+        "pressed": { "nodeId": "n149" },
+        "disabled": { "nodeId": "n151" },
+        "focused": { "nodeId": "n153" }
+      }
+    }
+  ]
+}

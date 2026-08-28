@@ -1,0 +1,191 @@
+[
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "actions",
+    "source_id": "actions"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "artboard",
+    "source_id": "artboard"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "badge_orb",
+    "source_id": "badge_orb"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "banner",
+    "source_id": "banner"
+  },
+  {
+    "entity_kind": "Text",
+    "kind": "Text",
+    "owned": true,
+    "runtime_id": "blurb",
+    "source_id": "blurb"
+  },
+  {
+    "entity_kind": "Image",
+    "kind": "Image",
+    "owned": true,
+    "runtime_id": "crest",
+    "source_id": "crest"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "glass",
+    "source_id": "glass"
+  },
+  {
+    "entity_kind": "Text",
+    "kind": "Text",
+    "owned": true,
+    "runtime_id": "glass_label",
+    "source_id": "glass_label"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "hud_badge",
+    "source_id": "hud_badge"
+  },
+  {
+    "entity_kind": "Text",
+    "kind": "Text",
+    "owned": true,
+    "runtime_id": "hud_badge_label",
+    "source_id": "hud_badge_label"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "inventory",
+    "source_id": "inventory"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "inventory.close",
+    "source_id": "inventory.close"
+  },
+  {
+    "entity_kind": "Text",
+    "kind": "Text",
+    "owned": true,
+    "runtime_id": "inventory.close/button_secondary_label",
+    "source_id": "inventory.close/button_secondary_label"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "inventory.grid",
+    "source_id": "inventory.grid"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "main_menu",
+    "source_id": "main_menu"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "main_menu.play",
+    "source_id": "main_menu.play"
+  },
+  {
+    "entity_kind": "Text",
+    "kind": "Text",
+    "owned": true,
+    "runtime_id": "main_menu.play/button_primary_label",
+    "source_id": "main_menu.play/button_primary_label"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "main_menu.quit",
+    "source_id": "main_menu.quit"
+  },
+  {
+    "entity_kind": "Text",
+    "kind": "Text",
+    "owned": true,
+    "runtime_id": "main_menu.quit/quit_label",
+    "source_id": "main_menu.quit/quit_label"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "main_menu.settings",
+    "source_id": "main_menu.settings"
+  },
+  {
+    "entity_kind": "Text",
+    "kind": "Text",
+    "owned": true,
+    "runtime_id": "main_menu.settings/button_secondary_label",
+    "source_id": "main_menu.settings/button_secondary_label"
+  },
+  {
+    "entity_kind": "Text",
+    "kind": "Text",
+    "owned": true,
+    "runtime_id": "main_menu.title",
+    "source_id": "main_menu.title"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "media",
+    "source_id": "media"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "slot_a",
+    "source_id": "slot_a"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "slot_b",
+    "source_id": "slot_b"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "slot_c",
+    "source_id": "slot_c"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "slot_d",
+    "source_id": "slot_d"
+  }
+]

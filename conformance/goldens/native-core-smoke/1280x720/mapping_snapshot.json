@@ -1,0 +1,58 @@
+[
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "artboard",
+    "source_id": "artboard"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "banner",
+    "source_id": "banner"
+  },
+  {
+    "entity_kind": "Image",
+    "kind": "Image",
+    "owned": true,
+    "runtime_id": "crest",
+    "source_id": "crest"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "main_menu",
+    "source_id": "main_menu"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "main_menu.play",
+    "source_id": "main_menu.play"
+  },
+  {
+    "entity_kind": "Text",
+    "kind": "Text",
+    "owned": true,
+    "runtime_id": "main_menu.play/button_primary_label",
+    "source_id": "main_menu.play/button_primary_label"
+  },
+  {
+    "entity_kind": "Text",
+    "kind": "Text",
+    "owned": true,
+    "runtime_id": "main_menu.title",
+    "source_id": "main_menu.title"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "slot_a",
+    "source_id": "slot_a"
+  }
+]

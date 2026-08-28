@@ -1,0 +1,34 @@
+id = "alpha3"
+candidate_version = "0.1.0-alpha.3"
+
+required_gates = [
+  "sbom",
+  "format_integration",
+  "format_runtime",
+  "format_checker",
+  "format_exporter",
+  "clippy_integration",
+  "clippy_runtime",
+  "audit_runtime",
+  "licenses_runtime",
+  "export_fixture",
+  "tests_integration",
+  "tests_runtime",
+  "tests_checker",
+  "tests_exporter",
+  "all_targets_integration",
+  "all_targets_runtime",
+  "examples_runtime",
+  "feature_off_runtime",
+  "feature_off_integration",
+  "hot_reload_mutations",
+  "negative_exports",
+  "clean_reproduction",
+  "package_schema",
+  "package_runtime",
+  "publish_dry_run_schema",
+  "package_preflight",
+  "graphical_showcase",
+]
+
+external_gates = []

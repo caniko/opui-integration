@@ -1,0 +1,3486 @@
+{
+  "version": "0.8.1",
+  "name": "OpenPencil CLI Session",
+  "children": [
+    {
+      "type": "frame",
+      "id": "n1",
+      "name": "Regicide Interface",
+      "runtimeId": "app.root",
+      "width": 1280.0,
+      "height": 720.0,
+      "fill": [
+        {
+          "type": "solid",
+          "color": "#11131A"
+        }
+      ],
+      "children": [
+        {
+          "type": "frame",
+          "id": "n2",
+          "name": "Main Menu",
+          "runtimeId": "screen.main_menu",
+          "x": 0.0,
+          "y": 0.0,
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "horizontal",
+          "fill": [
+            {
+              "type": "solid",
+              "color": "#11131A"
+            }
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "n3",
+              "name": "Menu Rail",
+              "width": 430.0,
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 18.0,
+              "padding": 48.0,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "fill": [
+                {
+                  "type": "solid",
+                  "color": "#1B1F2A"
+                }
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "n4",
+                  "name": "A THRONE AWAITS",
+                  "width": "fit_content",
+                  "height": "fit_content",
+                  "content": "A THRONE AWAITS",
+                  "fontFamily": "Inter",
+                  "fontSize": 13.0,
+                  "fontWeight": 700,
+                  "letterSpacing": 2.0,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#D88A5B"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "n5",
+                  "name": "REGICIDE",
+                  "width": "fit_content",
+                  "height": "fit_content",
+                  "content": "REGICIDE",
+                  "fontFamily": "Inter",
+                  "fontSize": 52.0,
+                  "fontWeight": 850,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#F4E9D8"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "n6",
+                  "name": "Tactical duels. No sovereigns.",
+                  "width": "fit_content",
+                  "height": "fit_content",
+                  "content": "Tactical duels. No sovereigns.",
+                  "fontFamily": "Inter",
+                  "fontSize": 16.0,
+                  "fontWeight": 450,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#A89F94"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "n7",
+                  "name": "Play",
+                  "runtimeId": "main_menu.play",
+                  "role": "button",
+                  "accessibilityLabel": "Play",
+                  "tabIndex": 0,
+                  "visualStates": {
+                    "default": "main_menu.play.default",
+                    "disabled": "main_menu.play.disabled",
+                    "focused": "main_menu.play.focused",
+                    "hover": "main_menu.play.hover",
+                    "pressed": "main_menu.play.pressed"
+                  },
+                  "width": 260.0,
+                  "height": 52.0,
+                  "cornerRadius": 12.0,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "n8",
+                      "name": "Play default",
+                      "runtimeId": "main_menu.play.default",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#252B38"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 1.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#3C4556"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n9",
+                          "name": "Play default label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Play",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n10",
+                      "name": "Play hover",
+                      "runtimeId": "main_menu.play.hover",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#333B4B"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 2.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#D88A5B"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n11",
+                          "name": "Play hover label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Play",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n12",
+                      "name": "Play pressed",
+                      "runtimeId": "main_menu.play.pressed",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#8E5638"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 2.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#F0A46F"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n13",
+                          "name": "Play pressed label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Play",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#FFF7EC"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n14",
+                      "name": "Play disabled",
+                      "runtimeId": "main_menu.play.disabled",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#242731"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 1.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#343842"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n15",
+                          "name": "Play disabled label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Play",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#6F727B"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n16",
+                      "name": "Play focused",
+                      "runtimeId": "main_menu.play.focused",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#252B38"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 3.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#F0A46F"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n17",
+                          "name": "Play focused label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Play",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "n18",
+                  "name": "Settings",
+                  "runtimeId": "main_menu.settings",
+                  "role": "button",
+                  "accessibilityLabel": "Settings",
+                  "tabIndex": 1,
+                  "visualStates": {
+                    "default": "main_menu.settings.default",
+                    "disabled": "main_menu.settings.disabled",
+                    "focused": "main_menu.settings.focused",
+                    "hover": "main_menu.settings.hover",
+                    "pressed": "main_menu.settings.pressed"
+                  },
+                  "width": 260.0,
+                  "height": 52.0,
+                  "cornerRadius": 12.0,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "n19",
+                      "name": "Settings default",
+                      "runtimeId": "main_menu.settings.default",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#252B38"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 1.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#3C4556"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n20",
+                          "name": "Settings default label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Settings",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n21",
+                      "name": "Settings hover",
+                      "runtimeId": "main_menu.settings.hover",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#333B4B"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 2.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#D88A5B"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n22",
+                          "name": "Settings hover label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Settings",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n23",
+                      "name": "Settings pressed",
+                      "runtimeId": "main_menu.settings.pressed",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#8E5638"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 2.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#F0A46F"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n24",
+                          "name": "Settings pressed label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Settings",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#FFF7EC"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n25",
+                      "name": "Settings disabled",
+                      "runtimeId": "main_menu.settings.disabled",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#242731"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 1.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#343842"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n26",
+                          "name": "Settings disabled label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Settings",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#6F727B"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n27",
+                      "name": "Settings focused",
+                      "runtimeId": "main_menu.settings.focused",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#252B38"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 3.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#F0A46F"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n28",
+                          "name": "Settings focused label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Settings",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "n29",
+                  "name": "Quit",
+                  "runtimeId": "main_menu.quit",
+                  "role": "button",
+                  "accessibilityLabel": "Quit",
+                  "tabIndex": 2,
+                  "visualStates": {
+                    "default": "main_menu.quit.default",
+                    "disabled": "main_menu.quit.disabled",
+                    "focused": "main_menu.quit.focused",
+                    "hover": "main_menu.quit.hover",
+                    "pressed": "main_menu.quit.pressed"
+                  },
+                  "width": 260.0,
+                  "height": 52.0,
+                  "cornerRadius": 12.0,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "n30",
+                      "name": "Quit default",
+                      "runtimeId": "main_menu.quit.default",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#252B38"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 1.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#3C4556"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n31",
+                          "name": "Quit default label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Quit",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n32",
+                      "name": "Quit hover",
+                      "runtimeId": "main_menu.quit.hover",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#333B4B"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 2.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#D88A5B"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n33",
+                          "name": "Quit hover label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Quit",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n34",
+                      "name": "Quit pressed",
+                      "runtimeId": "main_menu.quit.pressed",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#8E5638"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 2.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#F0A46F"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n35",
+                          "name": "Quit pressed label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Quit",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#FFF7EC"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n36",
+                      "name": "Quit disabled",
+                      "runtimeId": "main_menu.quit.disabled",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#242731"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 1.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#343842"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n37",
+                          "name": "Quit disabled label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Quit",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#6F727B"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n38",
+                      "name": "Quit focused",
+                      "runtimeId": "main_menu.quit.focused",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#252B38"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 3.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#F0A46F"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n39",
+                          "name": "Quit focused label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Quit",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "n40",
+              "name": "Campaign Field",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "padding": 52.0,
+              "justifyContent": "space_between",
+              "fill": [
+                {
+                  "type": "solid",
+                  "color": "#151924"
+                }
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "n41",
+                  "name": "CHAPTER VII",
+                  "width": "fit_content",
+                  "height": "fit_content",
+                  "content": "CHAPTER VII",
+                  "fontFamily": "Inter",
+                  "fontSize": 14.0,
+                  "fontWeight": 750,
+                  "letterSpacing": 2.0,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#D88A5B"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "n42",
+                  "name": "Field Note",
+                  "width": "fill_container",
+                  "height": 220.0,
+                  "layout": "vertical",
+                  "gap": 14.0,
+                  "padding": 30.0,
+                  "cornerRadius": 18.0,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#252B38"
+                    }
+                  ],
+                  "stroke": {
+                    "thickness": 1.0,
+                    "fill": [
+                      {
+                        "type": "solid",
+                        "color": "#394153"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "n43",
+                      "name": "The crown is only a target.",
+                      "width": "fit_content",
+                      "height": "fit_content",
+                      "content": "The crown is only a target.",
+                      "fontFamily": "Inter",
+                      "fontSize": 30.0,
+                      "fontWeight": 700,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#F4E9D8"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "n44",
+                      "name": "Break the line, guard the king, and leave no move unanswered.",
+                      "width": "fit_content",
+                      "height": "fit_content",
+                      "content": "Break the line, guard the king, and leave no move unanswered.",
+                      "fontFamily": "Inter",
+                      "fontSize": 16.0,
+                      "fontWeight": 450,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#A89F94"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "n45",
+                  "name": "DESIGN SOURCE: OPENPENCIL  /  RUNTIME: BEVY 0.19",
+                  "width": "fit_content",
+                  "height": "fit_content",
+                  "content": "DESIGN SOURCE: OPENPENCIL  /  RUNTIME: BEVY 0.19",
+                  "fontFamily": "Inter",
+                  "fontSize": 12.0,
+                  "fontWeight": 600,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#A89F94"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "n46",
+          "name": "Settings Screen",
+          "runtimeId": "screen.settings",
+          "x": 0.0,
+          "y": 0.0,
+          "visible": false,
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 22.0,
+          "padding": 40.0,
+          "alignItems": "center",
+          "fill": [
+            {
+              "type": "solid",
+              "color": "#11131A"
+            }
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "n47",
+              "name": "SETTINGS",
+              "width": "fit_content",
+              "height": "fit_content",
+              "content": "SETTINGS",
+              "fontFamily": "Inter",
+              "fontSize": 38.0,
+              "fontWeight": 800,
+              "fill": [
+                {
+                  "type": "solid",
+                  "color": "#F4E9D8"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "n48",
+              "name": "Application-owned values, designer-owned presentation",
+              "width": "fit_content",
+              "height": "fit_content",
+              "content": "Application-owned values, designer-owned presentation",
+              "fontFamily": "Inter",
+              "fontSize": 15.0,
+              "fontWeight": 450,
+              "fill": [
+                {
+                  "type": "solid",
+                  "color": "#A89F94"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "n49",
+              "name": "Settings Card",
+              "width": "fill_container",
+              "height": 390.0,
+              "layout": "vertical",
+              "gap": 18.0,
+              "padding": 30.0,
+              "cornerRadius": 18.0,
+              "fill": [
+                {
+                  "type": "solid",
+                  "color": "#1B1F2A"
+                }
+              ],
+              "stroke": {
+                "thickness": 1.0,
+                "fill": [
+                  {
+                    "type": "solid",
+                    "color": "#394153"
+                  }
+                ]
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "id": "n50",
+                  "name": "DISPLAY & AUDIO",
+                  "width": "fit_content",
+                  "height": "fit_content",
+                  "content": "DISPLAY & AUDIO",
+                  "fontFamily": "Inter",
+                  "fontSize": 13.0,
+                  "fontWeight": 750,
+                  "letterSpacing": 2.0,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#D88A5B"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "n51",
+                  "name": "Fullscreen: On",
+                  "runtimeId": "settings.fullscreen",
+                  "width": "fit_content",
+                  "height": "fit_content",
+                  "content": "Fullscreen: On",
+                  "fontFamily": "Inter",
+                  "fontSize": 20.0,
+                  "fontWeight": 600,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#F4E9D8"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "n52",
+                  "name": "Toggle Fullscreen",
+                  "runtimeId": "settings.toggle_fullscreen",
+                  "role": "button",
+                  "accessibilityLabel": "Toggle fullscreen",
+                  "tabIndex": 3,
+                  "visualStates": {
+                    "default": "settings.toggle_fullscreen.default",
+                    "disabled": "settings.toggle_fullscreen.disabled",
+                    "focused": "settings.toggle_fullscreen.focused",
+                    "hover": "settings.toggle_fullscreen.hover",
+                    "pressed": "settings.toggle_fullscreen.pressed"
+                  },
+                  "width": 330.0,
+                  "height": 52.0,
+                  "cornerRadius": 12.0,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "n53",
+                      "name": "Toggle Fullscreen default",
+                      "runtimeId": "settings.toggle_fullscreen.default",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#252B38"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 1.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#3C4556"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n54",
+                          "name": "Toggle Fullscreen default label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Toggle Fullscreen",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n55",
+                      "name": "Toggle Fullscreen hover",
+                      "runtimeId": "settings.toggle_fullscreen.hover",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#333B4B"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 2.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#D88A5B"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n56",
+                          "name": "Toggle Fullscreen hover label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Toggle Fullscreen",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n57",
+                      "name": "Toggle Fullscreen pressed",
+                      "runtimeId": "settings.toggle_fullscreen.pressed",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#8E5638"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 2.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#F0A46F"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n58",
+                          "name": "Toggle Fullscreen pressed label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Toggle Fullscreen",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#FFF7EC"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n59",
+                      "name": "Toggle Fullscreen disabled",
+                      "runtimeId": "settings.toggle_fullscreen.disabled",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#242731"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 1.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#343842"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n60",
+                          "name": "Toggle Fullscreen disabled label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Toggle Fullscreen",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#6F727B"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n61",
+                      "name": "Toggle Fullscreen focused",
+                      "runtimeId": "settings.toggle_fullscreen.focused",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#252B38"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 3.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#F0A46F"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n62",
+                          "name": "Toggle Fullscreen focused label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Toggle Fullscreen",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "n63",
+                  "name": "Music Volume: 70%",
+                  "runtimeId": "settings.music",
+                  "width": "fit_content",
+                  "height": "fit_content",
+                  "content": "Music Volume: 70%",
+                  "fontFamily": "Inter",
+                  "fontSize": 20.0,
+                  "fontWeight": 600,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#F4E9D8"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "n64",
+                  "name": "Volume Controls",
+                  "width": "fill_container",
+                  "height": 52.0,
+                  "layout": "horizontal",
+                  "gap": 14.0,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "n65",
+                      "name": "Volume -",
+                      "runtimeId": "settings.music_down",
+                      "role": "button",
+                      "accessibilityLabel": "Decrease music volume",
+                      "tabIndex": 4,
+                      "visualStates": {
+                        "default": "settings.music_down.default",
+                        "disabled": "settings.music_down.disabled",
+                        "focused": "settings.music_down.focused",
+                        "hover": "settings.music_down.hover",
+                        "pressed": "settings.music_down.pressed"
+                      },
+                      "width": 180.0,
+                      "height": 52.0,
+                      "cornerRadius": 12.0,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "n66",
+                          "name": "Volume - default",
+                          "runtimeId": "settings.music_down.default",
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "layout": "horizontal",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "cornerRadius": 12.0,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#252B38"
+                            }
+                          ],
+                          "stroke": {
+                            "thickness": 1.0,
+                            "fill": [
+                              {
+                                "type": "solid",
+                                "color": "#3C4556"
+                              }
+                            ]
+                          },
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "n67",
+                              "name": "Volume - default label",
+                              "width": "fit_content",
+                              "height": "fit_content",
+                              "content": "Volume -",
+                              "fontFamily": "Inter",
+                              "fontSize": 17.0,
+                              "fontWeight": 650,
+                              "fill": [
+                                {
+                                  "type": "solid",
+                                  "color": "#F4E9D8"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "n68",
+                          "name": "Volume - hover",
+                          "runtimeId": "settings.music_down.hover",
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "layout": "horizontal",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "cornerRadius": 12.0,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#333B4B"
+                            }
+                          ],
+                          "stroke": {
+                            "thickness": 2.0,
+                            "fill": [
+                              {
+                                "type": "solid",
+                                "color": "#D88A5B"
+                              }
+                            ]
+                          },
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "n69",
+                              "name": "Volume - hover label",
+                              "width": "fit_content",
+                              "height": "fit_content",
+                              "content": "Volume -",
+                              "fontFamily": "Inter",
+                              "fontSize": 17.0,
+                              "fontWeight": 650,
+                              "fill": [
+                                {
+                                  "type": "solid",
+                                  "color": "#F4E9D8"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "n70",
+                          "name": "Volume - pressed",
+                          "runtimeId": "settings.music_down.pressed",
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "layout": "horizontal",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "cornerRadius": 12.0,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#8E5638"
+                            }
+                          ],
+                          "stroke": {
+                            "thickness": 2.0,
+                            "fill": [
+                              {
+                                "type": "solid",
+                                "color": "#F0A46F"
+                              }
+                            ]
+                          },
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "n71",
+                              "name": "Volume - pressed label",
+                              "width": "fit_content",
+                              "height": "fit_content",
+                              "content": "Volume -",
+                              "fontFamily": "Inter",
+                              "fontSize": 17.0,
+                              "fontWeight": 650,
+                              "fill": [
+                                {
+                                  "type": "solid",
+                                  "color": "#FFF7EC"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "n72",
+                          "name": "Volume - disabled",
+                          "runtimeId": "settings.music_down.disabled",
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "layout": "horizontal",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "cornerRadius": 12.0,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#242731"
+                            }
+                          ],
+                          "stroke": {
+                            "thickness": 1.0,
+                            "fill": [
+                              {
+                                "type": "solid",
+                                "color": "#343842"
+                              }
+                            ]
+                          },
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "n73",
+                              "name": "Volume - disabled label",
+                              "width": "fit_content",
+                              "height": "fit_content",
+                              "content": "Volume -",
+                              "fontFamily": "Inter",
+                              "fontSize": 17.0,
+                              "fontWeight": 650,
+                              "fill": [
+                                {
+                                  "type": "solid",
+                                  "color": "#6F727B"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "n74",
+                          "name": "Volume - focused",
+                          "runtimeId": "settings.music_down.focused",
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "layout": "horizontal",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "cornerRadius": 12.0,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#252B38"
+                            }
+                          ],
+                          "stroke": {
+                            "thickness": 3.0,
+                            "fill": [
+                              {
+                                "type": "solid",
+                                "color": "#F0A46F"
+                              }
+                            ]
+                          },
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "n75",
+                              "name": "Volume - focused label",
+                              "width": "fit_content",
+                              "height": "fit_content",
+                              "content": "Volume -",
+                              "fontFamily": "Inter",
+                              "fontSize": 17.0,
+                              "fontWeight": 650,
+                              "fill": [
+                                {
+                                  "type": "solid",
+                                  "color": "#F4E9D8"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n76",
+                      "name": "Volume +",
+                      "runtimeId": "settings.music_up",
+                      "role": "button",
+                      "accessibilityLabel": "Increase music volume",
+                      "tabIndex": 5,
+                      "visualStates": {
+                        "default": "settings.music_up.default",
+                        "disabled": "settings.music_up.disabled",
+                        "focused": "settings.music_up.focused",
+                        "hover": "settings.music_up.hover",
+                        "pressed": "settings.music_up.pressed"
+                      },
+                      "width": 180.0,
+                      "height": 52.0,
+                      "cornerRadius": 12.0,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "n77",
+                          "name": "Volume + default",
+                          "runtimeId": "settings.music_up.default",
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "layout": "horizontal",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "cornerRadius": 12.0,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#252B38"
+                            }
+                          ],
+                          "stroke": {
+                            "thickness": 1.0,
+                            "fill": [
+                              {
+                                "type": "solid",
+                                "color": "#3C4556"
+                              }
+                            ]
+                          },
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "n78",
+                              "name": "Volume + default label",
+                              "width": "fit_content",
+                              "height": "fit_content",
+                              "content": "Volume +",
+                              "fontFamily": "Inter",
+                              "fontSize": 17.0,
+                              "fontWeight": 650,
+                              "fill": [
+                                {
+                                  "type": "solid",
+                                  "color": "#F4E9D8"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "n79",
+                          "name": "Volume + hover",
+                          "runtimeId": "settings.music_up.hover",
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "layout": "horizontal",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "cornerRadius": 12.0,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#333B4B"
+                            }
+                          ],
+                          "stroke": {
+                            "thickness": 2.0,
+                            "fill": [
+                              {
+                                "type": "solid",
+                                "color": "#D88A5B"
+                              }
+                            ]
+                          },
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "n80",
+                              "name": "Volume + hover label",
+                              "width": "fit_content",
+                              "height": "fit_content",
+                              "content": "Volume +",
+                              "fontFamily": "Inter",
+                              "fontSize": 17.0,
+                              "fontWeight": 650,
+                              "fill": [
+                                {
+                                  "type": "solid",
+                                  "color": "#F4E9D8"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "n81",
+                          "name": "Volume + pressed",
+                          "runtimeId": "settings.music_up.pressed",
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "layout": "horizontal",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "cornerRadius": 12.0,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#8E5638"
+                            }
+                          ],
+                          "stroke": {
+                            "thickness": 2.0,
+                            "fill": [
+                              {
+                                "type": "solid",
+                                "color": "#F0A46F"
+                              }
+                            ]
+                          },
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "n82",
+                              "name": "Volume + pressed label",
+                              "width": "fit_content",
+                              "height": "fit_content",
+                              "content": "Volume +",
+                              "fontFamily": "Inter",
+                              "fontSize": 17.0,
+                              "fontWeight": 650,
+                              "fill": [
+                                {
+                                  "type": "solid",
+                                  "color": "#FFF7EC"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "n83",
+                          "name": "Volume + disabled",
+                          "runtimeId": "settings.music_up.disabled",
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "layout": "horizontal",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "cornerRadius": 12.0,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#242731"
+                            }
+                          ],
+                          "stroke": {
+                            "thickness": 1.0,
+                            "fill": [
+                              {
+                                "type": "solid",
+                                "color": "#343842"
+                              }
+                            ]
+                          },
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "n84",
+                              "name": "Volume + disabled label",
+                              "width": "fit_content",
+                              "height": "fit_content",
+                              "content": "Volume +",
+                              "fontFamily": "Inter",
+                              "fontSize": 17.0,
+                              "fontWeight": 650,
+                              "fill": [
+                                {
+                                  "type": "solid",
+                                  "color": "#6F727B"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "n85",
+                          "name": "Volume + focused",
+                          "runtimeId": "settings.music_up.focused",
+                          "x": 0.0,
+                          "y": 0.0,
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "layout": "horizontal",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "cornerRadius": 12.0,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#252B38"
+                            }
+                          ],
+                          "stroke": {
+                            "thickness": 3.0,
+                            "fill": [
+                              {
+                                "type": "solid",
+                                "color": "#F0A46F"
+                              }
+                            ]
+                          },
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "n86",
+                              "name": "Volume + focused label",
+                              "width": "fit_content",
+                              "height": "fit_content",
+                              "content": "Volume +",
+                              "fontFamily": "Inter",
+                              "fontSize": 17.0,
+                              "fontWeight": 650,
+                              "fill": [
+                                {
+                                  "type": "solid",
+                                  "color": "#F4E9D8"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "n87",
+              "name": "Settings Actions",
+              "width": "fill_container",
+              "height": 52.0,
+              "layout": "horizontal",
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "n88",
+                  "name": "Back",
+                  "runtimeId": "settings.back",
+                  "role": "button",
+                  "accessibilityLabel": "Back",
+                  "tabIndex": 6,
+                  "visualStates": {
+                    "default": "settings.back.default",
+                    "disabled": "settings.back.disabled",
+                    "focused": "settings.back.focused",
+                    "hover": "settings.back.hover",
+                    "pressed": "settings.back.pressed"
+                  },
+                  "width": 220.0,
+                  "height": 52.0,
+                  "cornerRadius": 12.0,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "n89",
+                      "name": "Back default",
+                      "runtimeId": "settings.back.default",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#252B38"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 1.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#3C4556"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n90",
+                          "name": "Back default label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Back",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n91",
+                      "name": "Back hover",
+                      "runtimeId": "settings.back.hover",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#333B4B"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 2.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#D88A5B"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n92",
+                          "name": "Back hover label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Back",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n93",
+                      "name": "Back pressed",
+                      "runtimeId": "settings.back.pressed",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#8E5638"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 2.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#F0A46F"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n94",
+                          "name": "Back pressed label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Back",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#FFF7EC"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n95",
+                      "name": "Back disabled",
+                      "runtimeId": "settings.back.disabled",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#242731"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 1.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#343842"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n96",
+                          "name": "Back disabled label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Back",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#6F727B"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n97",
+                      "name": "Back focused",
+                      "runtimeId": "settings.back.focused",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#252B38"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 3.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#F0A46F"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n98",
+                          "name": "Back focused label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Back",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "n99",
+                  "name": "Apply",
+                  "runtimeId": "settings.apply",
+                  "role": "button",
+                  "accessibilityLabel": "Apply settings",
+                  "tabIndex": 7,
+                  "visualStates": {
+                    "default": "settings.apply.default",
+                    "disabled": "settings.apply.disabled",
+                    "focused": "settings.apply.focused",
+                    "hover": "settings.apply.hover",
+                    "pressed": "settings.apply.pressed"
+                  },
+                  "width": 220.0,
+                  "height": 52.0,
+                  "cornerRadius": 12.0,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "n100",
+                      "name": "Apply default",
+                      "runtimeId": "settings.apply.default",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#252B38"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 1.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#3C4556"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n101",
+                          "name": "Apply default label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Apply",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n102",
+                      "name": "Apply hover",
+                      "runtimeId": "settings.apply.hover",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#333B4B"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 2.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#D88A5B"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n103",
+                          "name": "Apply hover label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Apply",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n104",
+                      "name": "Apply pressed",
+                      "runtimeId": "settings.apply.pressed",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#8E5638"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 2.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#F0A46F"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n105",
+                          "name": "Apply pressed label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Apply",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#FFF7EC"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n106",
+                      "name": "Apply disabled",
+                      "runtimeId": "settings.apply.disabled",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#242731"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 1.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#343842"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n107",
+                          "name": "Apply disabled label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Apply",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#6F727B"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n108",
+                      "name": "Apply focused",
+                      "runtimeId": "settings.apply.focused",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#252B38"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 3.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#F0A46F"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n109",
+                          "name": "Apply focused label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Apply",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "n110",
+          "name": "Battle HUD",
+          "runtimeId": "screen.hud",
+          "x": 0.0,
+          "y": 0.0,
+          "visible": false,
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "padding": 30.0,
+          "justifyContent": "space_between",
+          "fill": [
+            {
+              "type": "solid",
+              "color": "#171B24"
+            }
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "n111",
+              "name": "HUD Top Bar",
+              "width": "fill_container",
+              "height": 76.0,
+              "layout": "horizontal",
+              "padding": 18.0,
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "cornerRadius": 14.0,
+              "fill": [
+                {
+                  "type": "solid",
+                  "color": "#1B1F2A"
+                }
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "n112",
+                  "name": "Player: Rowan",
+                  "runtimeId": "hud.player_name",
+                  "width": "fit_content",
+                  "height": "fit_content",
+                  "content": "Player: Rowan",
+                  "fontFamily": "Inter",
+                  "fontSize": 20.0,
+                  "fontWeight": 650,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#F4E9D8"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "n113",
+                  "name": "Score: 1200",
+                  "runtimeId": "hud.score",
+                  "width": "fit_content",
+                  "height": "fit_content",
+                  "content": "Score: 1200",
+                  "fontFamily": "Inter",
+                  "fontSize": 20.0,
+                  "fontWeight": 700,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#F0A46F"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "n114",
+                  "name": "Pause",
+                  "runtimeId": "hud.pause",
+                  "role": "button",
+                  "accessibilityLabel": "Pause game",
+                  "tabIndex": 8,
+                  "visualStates": {
+                    "default": "hud.pause.default",
+                    "disabled": "hud.pause.disabled",
+                    "focused": "hud.pause.focused",
+                    "hover": "hud.pause.hover",
+                    "pressed": "hud.pause.pressed"
+                  },
+                  "width": 150.0,
+                  "height": 52.0,
+                  "cornerRadius": 12.0,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "n115",
+                      "name": "Pause default",
+                      "runtimeId": "hud.pause.default",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#252B38"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 1.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#3C4556"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n116",
+                          "name": "Pause default label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Pause",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n117",
+                      "name": "Pause hover",
+                      "runtimeId": "hud.pause.hover",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#333B4B"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 2.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#D88A5B"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n118",
+                          "name": "Pause hover label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Pause",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n119",
+                      "name": "Pause pressed",
+                      "runtimeId": "hud.pause.pressed",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#8E5638"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 2.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#F0A46F"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n120",
+                          "name": "Pause pressed label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Pause",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#FFF7EC"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n121",
+                      "name": "Pause disabled",
+                      "runtimeId": "hud.pause.disabled",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#242731"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 1.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#343842"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n122",
+                          "name": "Pause disabled label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Pause",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#6F727B"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "n123",
+                      "name": "Pause focused",
+                      "runtimeId": "hud.pause.focused",
+                      "x": 0.0,
+                      "y": 0.0,
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "layout": "horizontal",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "cornerRadius": 12.0,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#252B38"
+                        }
+                      ],
+                      "stroke": {
+                        "thickness": 3.0,
+                        "fill": [
+                          {
+                            "type": "solid",
+                            "color": "#F0A46F"
+                          }
+                        ]
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "n124",
+                          "name": "Pause focused label",
+                          "width": "fit_content",
+                          "height": "fit_content",
+                          "content": "Pause",
+                          "fontFamily": "Inter",
+                          "fontSize": 17.0,
+                          "fontWeight": 650,
+                          "fill": [
+                            {
+                              "type": "solid",
+                              "color": "#F4E9D8"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "n125",
+              "name": "Battlefield",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 16.0,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "n126",
+                  "name": "YOUR TURN",
+                  "runtimeId": "hud.turn",
+                  "width": "fit_content",
+                  "height": "fit_content",
+                  "content": "YOUR TURN",
+                  "fontFamily": "Inter",
+                  "fontSize": 16.0,
+                  "fontWeight": 800,
+                  "letterSpacing": 3.0,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#D88A5B"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "n127",
+                  "name": "Hold the center. Pressure the crown.",
+                  "width": "fit_content",
+                  "height": "fit_content",
+                  "content": "Hold the center. Pressure the crown.",
+                  "fontFamily": "Inter",
+                  "fontSize": 30.0,
+                  "fontWeight": 650,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#F4E9D8"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "n128",
+              "name": "Health Panel",
+              "width": "fill_container",
+              "height": 70.0,
+              "layout": "horizontal",
+              "padding": 18.0,
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "cornerRadius": 14.0,
+              "fill": [
+                {
+                  "type": "solid",
+                  "color": "#1B1F2A"
+                }
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "n129",
+                  "name": "King Health: 84",
+                  "runtimeId": "hud.health",
+                  "width": "fit_content",
+                  "height": "fit_content",
+                  "content": "King Health: 84",
+                  "fontFamily": "Inter",
+                  "fontSize": 20.0,
+                  "fontWeight": 700,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#72C7A5"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "n130",
+                  "name": "Formation stable",
+                  "runtimeId": "hud.status",
+                  "width": "fit_content",
+                  "height": "fit_content",
+                  "content": "Formation stable",
+                  "fontFamily": "Inter",
+                  "fontSize": 16.0,
+                  "fontWeight": 500,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#A89F94"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "n131",
+          "name": "Pause Menu",
+          "runtimeId": "screen.pause",
+          "x": 0.0,
+          "y": 0.0,
+          "visible": false,
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 18.0,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "fill": [
+            {
+              "type": "solid",
+              "color": "#11131AE6"
+            }
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "n132",
+              "name": "PAUSED",
+              "width": "fit_content",
+              "height": "fit_content",
+              "content": "PAUSED",
+              "fontFamily": "Inter",
+              "fontSize": 42.0,
+              "fontWeight": 800,
+              "fill": [
+                {
+                  "type": "solid",
+                  "color": "#F4E9D8"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "n133",
+              "name": "Resume",
+              "runtimeId": "pause.resume",
+              "role": "button",
+              "accessibilityLabel": "Resume game",
+              "tabIndex": 9,
+              "visualStates": {
+                "default": "pause.resume.default",
+                "disabled": "pause.resume.disabled",
+                "focused": "pause.resume.focused",
+                "hover": "pause.resume.hover",
+                "pressed": "pause.resume.pressed"
+              },
+              "width": 260.0,
+              "height": 52.0,
+              "cornerRadius": 12.0,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "n134",
+                  "name": "Resume default",
+                  "runtimeId": "pause.resume.default",
+                  "x": 0.0,
+                  "y": 0.0,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 12.0,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#252B38"
+                    }
+                  ],
+                  "stroke": {
+                    "thickness": 1.0,
+                    "fill": [
+                      {
+                        "type": "solid",
+                        "color": "#3C4556"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "n135",
+                      "name": "Resume default label",
+                      "width": "fit_content",
+                      "height": "fit_content",
+                      "content": "Resume",
+                      "fontFamily": "Inter",
+                      "fontSize": 17.0,
+                      "fontWeight": 650,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#F4E9D8"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "n136",
+                  "name": "Resume hover",
+                  "runtimeId": "pause.resume.hover",
+                  "x": 0.0,
+                  "y": 0.0,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 12.0,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#333B4B"
+                    }
+                  ],
+                  "stroke": {
+                    "thickness": 2.0,
+                    "fill": [
+                      {
+                        "type": "solid",
+                        "color": "#D88A5B"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "n137",
+                      "name": "Resume hover label",
+                      "width": "fit_content",
+                      "height": "fit_content",
+                      "content": "Resume",
+                      "fontFamily": "Inter",
+                      "fontSize": 17.0,
+                      "fontWeight": 650,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#F4E9D8"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "n138",
+                  "name": "Resume pressed",
+                  "runtimeId": "pause.resume.pressed",
+                  "x": 0.0,
+                  "y": 0.0,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 12.0,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#8E5638"
+                    }
+                  ],
+                  "stroke": {
+                    "thickness": 2.0,
+                    "fill": [
+                      {
+                        "type": "solid",
+                        "color": "#F0A46F"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "n139",
+                      "name": "Resume pressed label",
+                      "width": "fit_content",
+                      "height": "fit_content",
+                      "content": "Resume",
+                      "fontFamily": "Inter",
+                      "fontSize": 17.0,
+                      "fontWeight": 650,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#FFF7EC"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "n140",
+                  "name": "Resume disabled",
+                  "runtimeId": "pause.resume.disabled",
+                  "x": 0.0,
+                  "y": 0.0,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 12.0,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#242731"
+                    }
+                  ],
+                  "stroke": {
+                    "thickness": 1.0,
+                    "fill": [
+                      {
+                        "type": "solid",
+                        "color": "#343842"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "n141",
+                      "name": "Resume disabled label",
+                      "width": "fit_content",
+                      "height": "fit_content",
+                      "content": "Resume",
+                      "fontFamily": "Inter",
+                      "fontSize": 17.0,
+                      "fontWeight": 650,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#6F727B"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "n142",
+                  "name": "Resume focused",
+                  "runtimeId": "pause.resume.focused",
+                  "x": 0.0,
+                  "y": 0.0,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 12.0,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#252B38"
+                    }
+                  ],
+                  "stroke": {
+                    "thickness": 3.0,
+                    "fill": [
+                      {
+                        "type": "solid",
+                        "color": "#F0A46F"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "n143",
+                      "name": "Resume focused label",
+                      "width": "fit_content",
+                      "height": "fit_content",
+                      "content": "Resume",
+                      "fontFamily": "Inter",
+                      "fontSize": 17.0,
+                      "fontWeight": 650,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#F4E9D8"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "n144",
+              "name": "Return to Menu",
+              "runtimeId": "pause.menu",
+              "role": "button",
+              "accessibilityLabel": "Return to main menu",
+              "tabIndex": 10,
+              "visualStates": {
+                "default": "pause.menu.default",
+                "disabled": "pause.menu.disabled",
+                "focused": "pause.menu.focused",
+                "hover": "pause.menu.hover",
+                "pressed": "pause.menu.pressed"
+              },
+              "width": 260.0,
+              "height": 52.0,
+              "cornerRadius": 12.0,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "n145",
+                  "name": "Return to Menu default",
+                  "runtimeId": "pause.menu.default",
+                  "x": 0.0,
+                  "y": 0.0,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 12.0,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#252B38"
+                    }
+                  ],
+                  "stroke": {
+                    "thickness": 1.0,
+                    "fill": [
+                      {
+                        "type": "solid",
+                        "color": "#3C4556"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "n146",
+                      "name": "Return to Menu default label",
+                      "width": "fit_content",
+                      "height": "fit_content",
+                      "content": "Return to Menu",
+                      "fontFamily": "Inter",
+                      "fontSize": 17.0,
+                      "fontWeight": 650,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#F4E9D8"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "n147",
+                  "name": "Return to Menu hover",
+                  "runtimeId": "pause.menu.hover",
+                  "x": 0.0,
+                  "y": 0.0,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 12.0,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#333B4B"
+                    }
+                  ],
+                  "stroke": {
+                    "thickness": 2.0,
+                    "fill": [
+                      {
+                        "type": "solid",
+                        "color": "#D88A5B"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "n148",
+                      "name": "Return to Menu hover label",
+                      "width": "fit_content",
+                      "height": "fit_content",
+                      "content": "Return to Menu",
+                      "fontFamily": "Inter",
+                      "fontSize": 17.0,
+                      "fontWeight": 650,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#F4E9D8"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "n149",
+                  "name": "Return to Menu pressed",
+                  "runtimeId": "pause.menu.pressed",
+                  "x": 0.0,
+                  "y": 0.0,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 12.0,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#8E5638"
+                    }
+                  ],
+                  "stroke": {
+                    "thickness": 2.0,
+                    "fill": [
+                      {
+                        "type": "solid",
+                        "color": "#F0A46F"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "n150",
+                      "name": "Return to Menu pressed label",
+                      "width": "fit_content",
+                      "height": "fit_content",
+                      "content": "Return to Menu",
+                      "fontFamily": "Inter",
+                      "fontSize": 17.0,
+                      "fontWeight": 650,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#FFF7EC"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "n151",
+                  "name": "Return to Menu disabled",
+                  "runtimeId": "pause.menu.disabled",
+                  "x": 0.0,
+                  "y": 0.0,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 12.0,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#242731"
+                    }
+                  ],
+                  "stroke": {
+                    "thickness": 1.0,
+                    "fill": [
+                      {
+                        "type": "solid",
+                        "color": "#343842"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "n152",
+                      "name": "Return to Menu disabled label",
+                      "width": "fit_content",
+                      "height": "fit_content",
+                      "content": "Return to Menu",
+                      "fontFamily": "Inter",
+                      "fontSize": 17.0,
+                      "fontWeight": 650,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#6F727B"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "n153",
+                  "name": "Return to Menu focused",
+                  "runtimeId": "pause.menu.focused",
+                  "x": 0.0,
+                  "y": 0.0,
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "cornerRadius": 12.0,
+                  "fill": [
+                    {
+                      "type": "solid",
+                      "color": "#252B38"
+                    }
+                  ],
+                  "stroke": {
+                    "thickness": 3.0,
+                    "fill": [
+                      {
+                        "type": "solid",
+                        "color": "#F0A46F"
+                      }
+                    ]
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "n154",
+                      "name": "Return to Menu focused label",
+                      "width": "fit_content",
+                      "height": "fit_content",
+                      "content": "Return to Menu",
+                      "fontFamily": "Inter",
+                      "fontSize": 17.0,
+                      "fontWeight": 650,
+                      "fill": [
+                        {
+                          "type": "solid",
+                          "color": "#F4E9D8"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "runtimeEntrypoints": {
+    "app": "app.root"
+  }
+}

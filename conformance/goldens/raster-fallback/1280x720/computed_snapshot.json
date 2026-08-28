@@ -1,0 +1,26 @@
+[
+  {
+    "content_height": 128.0,
+    "content_width": 128.0,
+    "height": 720.0,
+    "source_id": "artboard",
+    "style_height": "Percent(100.0)",
+    "style_width": "Percent(100.0)",
+    "visible": true,
+    "width": 1280.0,
+    "x": 640.0,
+    "y": 360.0
+  },
+  {
+    "content_height": 48.0,
+    "content_width": 48.0,
+    "height": 48.0,
+    "source_id": "badge_orb",
+    "style_height": "Px(48.0)",
+    "style_width": "Px(48.0)",
+    "visible": true,
+    "width": 48.0,
+    "x": 104.0,
+    "y": 104.0
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "version": "0.8.0",
+  "children": [
+    {
+      "type": "frame",
+      "id": "artboard",
+      "name": "artboard",
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 720,
+      "fill": [{ "type": "solid", "color": "#0f172a" }],
+      "layout": "vertical",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "gap": 12,
+      "padding": 32,
+      "children": [
+        {
+          "type": "text",
+          "id": "h1",
+          "name": "h1",
+          "content": "Title",
+          "fontFamily": "Inter",
+          "fontSize": 48,
+          "fontWeight": 400,
+          "fill": [{ "type": "solid", "color": "#cbd5e1" }]
+        },
+        {
+          "type": "text",
+          "id": "body",
+          "name": "body",
+          "width": "fill_container",
+          "content": [
+            { "text": "Loadout ", "fontFamily": "Inter", "fontSize": 18, "fontWeight": 400, "fill": "#94a3b8" },
+            { "text": "ready", "fontFamily": "Inter", "fontSize": 18, "fontWeight": 400, "fontStyle": "italic", "fill": "#38bdf8" }
+          ]
+        }
+      ]
+    }
+  ]
+}

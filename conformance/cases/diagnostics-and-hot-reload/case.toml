@@ -1,0 +1,26 @@
+id = "diagnostics-and-hot-reload"
+source = "fixtures/runtime-ui.op"
+entrypoint = "default"
+viewports = ["1280x720"]
+expected_runtime_ids = [
+  "main_menu",
+  "main_menu.title",
+  "main_menu.play",
+  "main_menu.settings",
+  "main_menu.quit",
+]
+capability_requirements = ["runtime.ids", "runtime.reconciliation"]
+expected_diagnostics = [
+  { code = "opui.unsupported_native", severity = "warning", node_id = "badge_orb", runtime_id = "badge_orb", strategy = "native" },
+]
+commands = [
+  { program = "cargo", args = ["test", "--offline", "--test", "runtime"] },
+  { program = "cargo", args = ["test", "--offline", "--test", "negative"] },
+  { program = "cargo", args = ["test", "--offline", "--manifest-path", "../bevy_openpencil/Cargo.toml", "-p", "bevy_openpencil", "registry_keeps_first_runtime_id"] },
+  { program = "cargo", args = ["test", "--offline", "--manifest-path", "../bevy_openpencil/Cargo.toml", "-p", "bevy_openpencil", "multiple_mounts"] },
+  { program = "cargo", args = ["test", "--offline", "--manifest-path", "../bevy_openpencil/Cargo.toml", "-p", "bevy_openpencil", "host_mount_ownership"] },
+]
+visual = false
+release_blocking = true
+smoke = false
+notes = "hot-reload mutations live in tests/runtime.rs; negative export in tests/negative.rs; computed semantics are release-blocking"

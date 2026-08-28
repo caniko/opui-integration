@@ -1,0 +1,98 @@
+[
+  {
+    "content_height": 720.0,
+    "content_width": 1280.0,
+    "height": 720.0,
+    "source_id": "artboard",
+    "style_height": "Percent(100.0)",
+    "style_width": "Percent(100.0)",
+    "visible": true,
+    "width": 1280.0,
+    "x": 640.0,
+    "y": 360.0
+  },
+  {
+    "content_height": 0.0,
+    "content_width": 0.0,
+    "height": 48.0,
+    "source_id": "banner",
+    "style_height": "Px(48.0)",
+    "style_width": "Percent(50.0)",
+    "visible": true,
+    "width": 608.0,
+    "x": 640.0,
+    "y": 351.0
+  },
+  {
+    "content_height": 0.0,
+    "content_width": 0.0,
+    "height": 64.0,
+    "source_id": "crest",
+    "style_height": "Px(64.0)",
+    "style_width": "Px(64.0)",
+    "visible": true,
+    "width": 64.0,
+    "x": 640.0,
+    "y": 423.0
+  },
+  {
+    "content_height": 559.0,
+    "content_width": 976.0,
+    "height": 720.0,
+    "source_id": "main_menu",
+    "style_height": "Percent(100.0)",
+    "style_width": "Percent(100.0)",
+    "visible": true,
+    "width": 1280.0,
+    "x": 640.0,
+    "y": 360.0
+  },
+  {
+    "content_height": 32.0,
+    "content_width": 97.0,
+    "height": 44.0,
+    "source_id": "main_menu.play",
+    "style_height": "Px(44.0)",
+    "style_width": "Px(160.0)",
+    "visible": true,
+    "width": 160.0,
+    "x": 640.0,
+    "y": 289.0
+  },
+  {
+    "content_height": 20.0,
+    "content_width": 33.0,
+    "height": 20.0,
+    "source_id": "main_menu.play/button_primary_label",
+    "style_height": "Auto",
+    "style_width": "Auto",
+    "visible": true,
+    "width": 33.0,
+    "x": 640.5,
+    "y": 289.0
+  },
+  {
+    "content_height": 58.0,
+    "content_width": 220.0,
+    "height": 58.0,
+    "source_id": "main_menu.title",
+    "style_height": "Auto",
+    "style_width": "Auto",
+    "visible": true,
+    "width": 220.0,
+    "x": 640.0,
+    "y": 222.0
+  },
+  {
+    "content_height": 0.0,
+    "content_width": 0.0,
+    "height": 56.0,
+    "source_id": "slot_a",
+    "style_height": "Px(56.0)",
+    "style_width": "Px(56.0)",
+    "visible": true,
+    "width": 56.0,
+    "x": 640.0,
+    "y": 499.0
+  }
+]

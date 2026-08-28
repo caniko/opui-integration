@@ -1,0 +1,53 @@
+id = "rc1"
+candidate_version = "0.1.0-rc.1"
+allow_blocked_external = true
+
+required_gates = [
+  "sbom",
+  "format_integration",
+  "format_runtime",
+  "format_checker",
+  "format_exporter",
+  "clippy_integration",
+  "clippy_runtime",
+  "audit_runtime",
+  "licenses_runtime",
+  "export_fixture",
+  "tests_integration",
+  "tests_runtime",
+  "tests_checker",
+  "tests_exporter",
+  "all_targets_integration",
+  "all_targets_runtime",
+  "examples_runtime",
+  "feature_off_runtime",
+  "feature_off_integration",
+  "hot_reload_mutations",
+  "negative_exports",
+  "clean_reproduction",
+  "package_schema",
+  "package_runtime",
+  "publish_dry_run_schema",
+  "package_preflight",
+  "graphical_showcase",
+  "callback_scope",
+  "veritasium_pin",
+  "package_runtime_adopter",
+  "public_api_schema",
+  "public_api_runtime",
+  "semver_schema",
+  "semver_runtime",
+  "graphical_stress",
+  "performance",
+  "artifact_manifest",
+  "unsigned_provenance",
+  "reproducibility",
+]
+
+external_gates = [
+  "windows_native",
+  "macos_native",
+  "physical_gamepad",
+  "physical_touch",
+  "provenance_signature",
+]

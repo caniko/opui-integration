@@ -1,0 +1,48 @@
+format_version = 1
+
+[contract]
+id = "frozen_v1"
+path = "../opui"
+ref = "feat/opui-v1-contract"
+sha = "f4b6dc6df431efae9245be51b6c08c828339b007"
+
+[[repositories]]
+id = "opui"
+path = "../opui"
+sha = "04fdda1c8a2dabd4fad3ee66dd9043f44ed8509c"
+
+[[repositories]]
+id = "openpencil"
+path = "../openpencil"
+sha = "4c2a37e3d6632c89530f0edcfd7aec184e38383f"
+
+[[repositories]]
+id = "bevy_openpencil"
+path = "../bevy_openpencil"
+sha = "3833948555d0d5070d637fc973d082c7fe8e6a51"
+
+[integration]
+source_tree = "e1307d96236151afc78f07c98844f36ccd37412ba2726ee2fb01a4aedcf6272c"
+
+[reference_renderer]
+path = "../openpencil/result/bin/op-reference-renderer"
+sha256 = "fb13d86f3f7941baaea1ca8dac9d829bf43d24175e65365633fbf39be55039ea"
+note = "OpenPencil reference-renderer flake output; build ../openpencil#reference-renderer"
+
+[[submodules]]
+id = "agent"
+path = "../openpencil/vendor/agent"
+sha = "5c0f9506e27be5b4f29cd2c1093e2858ad0fa20c"
+allowed_dev_dirt = false
+
+[[submodules]]
+id = "casement"
+path = "../openpencil/vendor/casement"
+sha = "451173eb3353a4166d2d0f241f2e0606051064bd"
+allowed_dev_dirt = true
+
+[[submodules]]
+id = "jian"
+path = "../openpencil/vendor/jian"
+sha = "ba334d27edf05b7e4c7a2746fc3c664d9ed24f28"
+allowed_dev_dirt = false

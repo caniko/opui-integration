@@ -1,0 +1,9 @@
+id = "fluid-layout"
+source = "fixtures/cases/fluid-layout.op"
+entrypoint = "default"
+viewports = ["1280x720", "1920x1080", "800x1280"]
+capability_requirements = ["layout.flex", "layout.percent"]
+visual = true
+release_blocking = true
+smoke = false
+notes = "percent + fill_container across 16:9 and 800x1280"

@@ -1,0 +1,50 @@
+[
+  {
+    "content_height": 1080.0,
+    "content_width": 1920.0,
+    "height": 1080.0,
+    "source_id": "artboard",
+    "style_height": "Percent(100.0)",
+    "style_width": "Percent(100.0)",
+    "visible": true,
+    "width": 1920.0,
+    "x": 960.0,
+    "y": 540.0
+  },
+  {
+    "content_height": 0.0,
+    "content_width": 0.0,
+    "height": 1032.0,
+    "source_id": "left",
+    "style_height": "Percent(100.0)",
+    "style_width": "Percent(30.0)",
+    "visible": true,
+    "width": 562.0,
+    "x": 305.0,
+    "y": 540.0
+  },
+  {
+    "content_height": 0.0,
+    "content_width": 0.0,
+    "height": 1032.0,
+    "source_id": "right",
+    "style_height": "Percent(100.0)",
+    "style_width": "Auto",
+    "visible": true,
+    "width": 1294.0,
+    "x": 1249.0,
+    "y": 540.0
+  },
+  {
+    "content_height": 1080.0,
+    "content_width": 1920.0,
+    "height": 1080.0,
+    "source_id": "row",
+    "style_height": "Percent(100.0)",
+    "style_width": "Percent(100.0)",
+    "visible": true,
+    "width": 1920.0,
+    "x": 960.0,
+    "y": 540.0
+  }
+]

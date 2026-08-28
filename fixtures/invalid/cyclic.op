@@ -1,0 +1,19 @@
+{
+  "version": "0.8.0",
+  "children": [
+    {
+      "type": "frame",
+      "id": "proto",
+      "width": 20,
+      "height": 20,
+      "children": [{ "type": "ref", "id": "loop", "ref": "proto" }]
+    },
+    {
+      "type": "frame",
+      "id": "root",
+      "width": 40,
+      "height": 40,
+      "children": [{ "type": "ref", "id": "inst", "ref": "proto" }]
+    }
+  ]
+}

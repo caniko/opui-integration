@@ -1,0 +1,255 @@
+{
+  "version": "0.8.0",
+  "children": [
+    {
+      "type": "frame",
+      "id": "button_primary",
+      "name": "button_primary",
+      "reusable": true,
+      "width": 160,
+      "height": 44,
+      "cornerRadius": 8,
+      "layout": "horizontal",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "fill": [{ "type": "solid", "color": "#2563eb" }],
+      "children": [
+        {
+          "type": "text",
+          "id": "button_primary_label",
+          "content": "Play",
+          "fontFamily": "Inter",
+          "fontSize": 16,
+          "fontWeight": 600,
+          "fill": [{ "type": "solid", "color": "#ffffff" }]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "button_secondary",
+      "name": "button_secondary",
+      "reusable": true,
+      "width": 160,
+      "height": 44,
+      "cornerRadius": 8,
+      "layout": "horizontal",
+      "justifyContent": "center",
+      "alignItems": "center",
+      "fill": [{ "type": "solid", "color": "#334155" }],
+      "stroke": {
+        "thickness": 1,
+        "fill": [{ "type": "solid", "color": "#94a3b8" }]
+      },
+      "children": [
+        {
+          "type": "text",
+          "id": "button_secondary_label",
+          "content": "Settings",
+          "fontFamily": "Inter",
+          "fontSize": 16,
+          "fontWeight": 500,
+          "fill": [{ "type": "solid", "color": "#e2e8f0" }]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "artboard",
+      "name": "artboard",
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 720,
+      "fill": [{ "type": "solid", "color": "#0f172a" }],
+      "children": [
+        {
+          "type": "frame",
+          "id": "main_menu",
+          "name": "main_menu",
+          "x": 0,
+          "y": 0,
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": 32,
+          "children": [
+            {
+              "type": "text",
+              "id": "main_menu.title",
+              "name": "main_menu.title",
+              "width": "fit_content",
+              "height": "fit_content",
+              "content": "REGICIDE",
+              "fontFamily": "Inter",
+              "fontSize": 48,
+              "fontWeight": 800,
+              "fill": [{ "type": "solid", "color": "#f8fafc" }]
+            },
+            {
+              "type": "frame",
+              "id": "actions",
+              "layout": "horizontal",
+              "gap": 12,
+              "width": "fill_container",
+              "height": 44,
+              "children": [
+                { "type": "ref", "id": "main_menu.play", "name": "main_menu.play", "ref": "button_primary" },
+                { "type": "ref", "id": "main_menu.settings", "name": "main_menu.settings", "ref": "button_secondary" },
+                {
+                  "type": "ref",
+                  "id": "main_menu.quit",
+                  "name": "main_menu.quit",
+                  "ref": "button_secondary",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "quit_label",
+                      "content": "Quit",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": 500,
+                      "fill": [{ "type": "solid", "color": "#e2e8f0" }]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "banner",
+              "width": "50%",
+              "height": 48,
+              "cornerRadius": [4, 16, 24, 8],
+              "fill": [
+                {
+                  "type": "linear_gradient",
+                  "angle": 90,
+                  "stops": [
+                    { "color": "#7c3aed", "offset": 0 },
+                    { "color": "#2563eb", "offset": 1 }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "blurb",
+              "width": "fill_container",
+              "content": [
+                { "text": "Loadout ", "fontFamily": "Inter", "fontSize": 18, "fontWeight": 400, "fill": "#cbd5e1" },
+                { "text": "ready", "fontFamily": "Inter", "fontSize": 18, "fontWeight": 700, "fontStyle": "italic", "fill": "#38bdf8" }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "media",
+              "layout": "horizontal",
+              "gap": 16,
+              "height": 64,
+              "children": [
+                {
+                  "type": "image",
+                  "id": "crest",
+                  "width": 64,
+                  "height": 64,
+                  "src": "icon.png"
+                },
+                {
+                  "type": "ellipse",
+                  "id": "badge_orb",
+                  "name": "badge_orb",
+                  "width": 48,
+                  "height": 48,
+                  "fill": [{ "type": "solid", "color": "#f59e0b" }]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "glass",
+              "width": 280,
+              "height": 72,
+              "opacity": 0.85,
+              "rotation": 8,
+              "clipContent": true,
+              "cornerRadius": 12,
+              "fill": [{ "type": "solid", "color": "#1e293b" }],
+              "effects": [
+                {
+                  "type": "shadow",
+                  "offsetX": 0,
+                  "offsetY": 8,
+                  "blur": 16,
+                  "spread": 0,
+                  "color": "#00000080"
+                }
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "glass_label",
+                  "content": "clipped",
+                  "fontSize": 14,
+                  "fill": [{ "type": "solid", "color": "#94a3b8" }]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "inventory",
+              "name": "inventory",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "inventory.grid",
+                  "name": "inventory.grid",
+                  "layout": "horizontal",
+                  "gap": 8,
+                  "width": "fill_container",
+                  "height": 56,
+                  "children": [
+                    { "type": "frame", "id": "slot_a", "width": 56, "height": 56, "cornerRadius": 6, "fill": [{ "type": "solid", "color": "#1e293b" }] },
+                    { "type": "frame", "id": "slot_b", "width": 56, "height": 56, "cornerRadius": 6, "fill": [{ "type": "solid", "color": "#1e293b" }] },
+                    { "type": "frame", "id": "slot_c", "width": 56, "height": 56, "cornerRadius": 6, "fill": [{ "type": "solid", "color": "#1e293b" }] },
+                    { "type": "frame", "id": "slot_d", "width": 56, "height": 56, "cornerRadius": 6, "fill": [{ "type": "solid", "color": "#1e293b" }] }
+                  ]
+                },
+                {
+                  "type": "ref",
+                  "id": "inventory.close",
+                  "name": "inventory.close",
+                  "ref": "button_secondary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "hud_badge",
+          "x": 1180,
+          "y": 24,
+          "width": 72,
+          "height": 28,
+          "cornerRadius": 14,
+          "fill": [{ "type": "solid", "color": "#22c55e" }],
+          "children": [
+            {
+              "type": "text",
+              "id": "hud_badge_label",
+              "content": "LIVE",
+              "fontSize": 12,
+              "fontWeight": 700,
+              "fill": [{ "type": "solid", "color": "#052e16" }]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

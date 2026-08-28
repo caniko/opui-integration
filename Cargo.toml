@@ -1,0 +1,67 @@
+[package]
+name = "opui-integration"
+version = "0.1.0"
+edition = "2024"
+publish = false
+description = "OPUI v1 end-to-end: OpenPencil public CLI → checker → bevy_openpencil"
+license = "MIT"
+
+[features]
+visual = [
+    "dep:bevy",
+    "dep:bevy_openpencil",
+    "bevy/file_watcher",
+    "bevy_openpencil/file_watcher",
+]
+
+[dependencies]
+opui = { path = "../opui" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+sha2 = "0.10"
+image = { version = "0.25", default-features = false, features = ["png"] }
+ttf-parser = "0.25"
+bevy = { version = "=0.19.1", git = "https://codeberg.org/caniko/rs-veritasium.git", rev = "7cd58438d458d3e701c32d5d5ae0c7b1f70a2bc0", optional = true, default-features = false, features = ["ui"] }
+bevy_openpencil = { path = "../bevy_openpencil/crates/bevy_openpencil", optional = true }
+
+[[bin]]
+name = "bevy-shot"
+path = "src/bin/bevy_shot.rs"
+required-features = ["visual"]
+
+[[bin]]
+name = "opui-certify"
+path = "src/bin/opui_certify.rs"
+
+[[bin]]
+name = "opui-handoff"
+path = "src/bin/opui_handoff.rs"
+
+[[bin]]
+name = "opui-bindings"
+path = "src/bin/opui_bindings.rs"
+
+[[bin]]
+name = "runtime-probe"
+path = "src/bin/runtime_probe.rs"
+required-features = ["visual"]
+
+[[bin]]
+name = "designer-showcase"
+path = "src/bin/designer_showcase.rs"
+required-features = ["visual"]
+
+[[bin]]
+name = "perf-probe"
+path = "src/bin/perf_probe.rs"
+required-features = ["visual"]
+
+[dev-dependencies]
+bevy = { version = "=0.19.1", git = "https://codeberg.org/caniko/rs-veritasium.git", rev = "7cd58438d458d3e701c32d5d5ae0c7b1f70a2bc0", default-features = false, features = [
+    "bevy_asset",
+    "bevy_log",
+    "bevy_ui",
+    "bevy_window",
+] }
+bevy_openpencil = { path = "../bevy_openpencil/crates/bevy_openpencil" }

@@ -1,0 +1,14 @@
+supported = [
+  "asset.images",
+  "asset.fonts",
+  "asset.raster-fallback",
+  "layout.flex",
+  "layout.percent",
+  "layout.absolute",
+  "paint.solid",
+  "paint.linear-gradient",
+  "paint.radial-gradient",
+  "runtime.ids",
+  "runtime.reconciliation",
+  "text.runs",
+]

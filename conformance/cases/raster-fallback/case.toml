@@ -1,0 +1,13 @@
+id = "raster-fallback"
+source = "fixtures/cases/raster-fallback.op"
+entrypoint = "default"
+viewports = ["1280x720"]
+capability_requirements = ["asset.raster-fallback"]
+expected_diagnostics = [
+  { code = "opui.unsupported_native", severity = "warning", node_id = "badge_orb", runtime_id = "badge_orb", strategy = "native" },
+]
+visual = true
+raster_required = true
+release_blocking = true
+smoke = false
+notes = "ellipse requires raster-native"

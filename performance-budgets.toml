@@ -1,0 +1,4 @@
+fresh_load_p95_ms = 100.0
+reload_p95_ms = 10.0
+sustained_update_p95_ms = 2.0
+peak_rss_mib = 256.0

@@ -1,0 +1,107 @@
+[
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "angle0",
+    "source_id": "angle0"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "angle135",
+    "source_id": "angle135"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "angle180",
+    "source_id": "angle180"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "angle225",
+    "source_id": "angle225"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "angle270",
+    "source_id": "angle270"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "angle315",
+    "source_id": "angle315"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "angle45",
+    "source_id": "angle45"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "angle90",
+    "source_id": "angle90"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "artboard",
+    "source_id": "artboard"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "cardinals",
+    "source_id": "cardinals"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "diagonals",
+    "source_id": "diagonals"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "duplicate_stops",
+    "source_id": "duplicate_stops"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "non_square",
+    "source_id": "non_square"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "radial_center",
+    "source_id": "radial_center"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "special",
+    "source_id": "special"
+  }
+]

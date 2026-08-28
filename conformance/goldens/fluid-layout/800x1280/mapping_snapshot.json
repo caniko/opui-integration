@@ -1,0 +1,30 @@
+[
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "artboard",
+    "source_id": "artboard"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "left",
+    "source_id": "left"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "right",
+    "source_id": "right"
+  },
+  {
+    "entity_kind": "Container",
+    "kind": "Container",
+    "owned": true,
+    "runtime_id": "row",
+    "source_id": "row"
+  }
+]
