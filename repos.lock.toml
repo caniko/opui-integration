@@ -14,15 +14,15 @@ sha = "04fdda1c8a2dabd4fad3ee66dd9043f44ed8509c"
 [[repositories]]
 id = "openpencil"
 path = "../openpencil"
-sha = "a18720df451501878afcdc537026e15dfd15a14d"
+sha = "9cf33260ecdf532e422834739cfdd1cb012b20b7"
 
 [[repositories]]
 id = "bevy_openpencil"
 path = "../bevy_openpencil"
-sha = "3833948555d0d5070d637fc973d082c7fe8e6a51"
+sha = "077922417cdfcea7d70fb602698ae23372c36bd4"
 
 [integration]
-source_tree = "92da30115e1f69188b44dc11b39d2f7ec169e23708645b98b9e0dae8ec185d44"
+source_tree = "75b265b626aecf5e8216cf93398e1e92972a8d296f9293d44903f4682a7eea53"
 
 [reference_renderer]
 path = "../openpencil/result/bin/op-reference-renderer"

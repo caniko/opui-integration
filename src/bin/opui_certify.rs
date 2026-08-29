@@ -473,7 +473,7 @@ fn external_gates(root: &Path, profile: &ReleaseProfile) -> Vec<GateResult> {
                 let mut gate = GateResult::new(id, true);
                 if id == "public_source_closure" {
                     gate.evidence
-                        .push("https://codeberg.org/caniko/bevy_openpencil".into());
+                        .push("https://github.com/caniko/bevy_openpencil".into());
                 }
                 gate.finish(
                     GateStatus::Blocked,
@@ -1851,7 +1851,7 @@ fn write_sbom(workspace: &Path, destination: &Path, archives: &[PathBuf]) -> Res
         "dataLicense": "CC0-1.0",
         "SPDXID": "SPDXRef-DOCUMENT",
         "name": "bevy_openpencil dependency SBOM",
-        "documentNamespace": format!("https://codeberg.org/caniko/bevy_openpencil/sbom/{identity}"),
+        "documentNamespace": format!("https://github.com/caniko/bevy_openpencil/sbom/{identity}"),
         "creationInfo": {
             "created": "2026-08-27T00:00:00Z",
             "creators": ["Tool: opui-certify"],
