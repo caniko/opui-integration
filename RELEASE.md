@@ -16,7 +16,7 @@ signing remain external `Blocked` results and are not fabricated as passes.
 | --- | --- |
 | Frozen OPUI v1 | `f4b6dc6df431efae9245be51b6c08c828339b007` |
 | OPUI checker | `04fdda1c8a2dabd4fad3ee66dd9043f44ed8509c` |
-| OpenPencil | `4c2a37e3d6632c89530f0edcfd7aec184e38383f` |
+| OpenPencil | `a18720df451501878afcdc537026e15dfd15a14d` |
 | Bevy adapter | see `repos.lock.toml` |
 | Veritasium | `7cd58438d458d3e701c32d5d5ae0c7b1f70a2bc0` |
 

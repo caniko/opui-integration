@@ -14,7 +14,7 @@ sha = "04fdda1c8a2dabd4fad3ee66dd9043f44ed8509c"
 [[repositories]]
 id = "openpencil"
 path = "../openpencil"
-sha = "4c2a37e3d6632c89530f0edcfd7aec184e38383f"
+sha = "a18720df451501878afcdc537026e15dfd15a14d"
 
 [[repositories]]
 id = "bevy_openpencil"
@@ -22,7 +22,7 @@ path = "../bevy_openpencil"
 sha = "3833948555d0d5070d637fc973d082c7fe8e6a51"
 
 [integration]
-source_tree = "e1307d96236151afc78f07c98844f36ccd37412ba2726ee2fb01a4aedcf6272c"
+source_tree = "92da30115e1f69188b44dc11b39d2f7ec169e23708645b98b9e0dae8ec185d44"
 
 [reference_renderer]
 path = "../openpencil/result/bin/op-reference-renderer"

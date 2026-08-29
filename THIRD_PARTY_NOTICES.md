@@ -23,7 +23,7 @@ Inter project, source revision, version, copyright holder, and OFL 1.1 terms.
 - SHA-256: `c2127dbcb0adf86db21590e37a9c0ada15beeaf07d4a7723e8a54557626d34b0`
 - Size: 200746 bytes
 - Source: `designer/showcase.op`
-- Generator: OpenPencil `0.8.1` at `4c2a37e3d6632c89530f0edcfd7aec184e38383f`
+- Generator: OpenPencil `0.8.1` at `a18720df451501878afcdc537026e15dfd15a14d`
 
 The checked package and sidecars regenerate byte-for-byte when the output file
 is named `showcase.opui`.
