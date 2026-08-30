@@ -634,6 +634,35 @@ mod tests {
 
     #[test]
     fn generate_rejects_non_hosted_context() {
+        const CHILD: &str = "OPUI_NON_HOSTED_TEST_CHILD";
+        if std::env::var_os(CHILD).is_none() {
+            let mut child = Command::new(std::env::current_exe().unwrap());
+            child
+                .args([
+                    "--exact",
+                    "public_source::tests::generate_rejects_non_hosted_context",
+                ])
+                .env(CHILD, "1");
+            for name in [
+                "GITHUB_ACTIONS",
+                "RUNNER_ENVIRONMENT",
+                "GITHUB_REPOSITORY",
+                "GITHUB_EVENT_NAME",
+                "GITHUB_SHA",
+                "GITHUB_REF",
+                "GITHUB_RUN_ID",
+                "GITHUB_RUN_ATTEMPT",
+                "GITHUB_WORKFLOW_REF",
+                "RUNNER_OS",
+                "RUNNER_ARCH",
+                "ImageOS",
+                "ImageVersion",
+            ] {
+                child.env_remove(name);
+            }
+            assert!(child.status().unwrap().success());
+            return;
+        }
         let root = Path::new(env!("CARGO_MANIFEST_DIR"));
         let err = generate(
             root,

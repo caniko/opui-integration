@@ -38,6 +38,7 @@
         LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
           pkgs.libxkbcommon
           pkgs.mesa
+          pkgs.systemd
           pkgs.vulkan-loader
           pkgs.wayland
         ];
