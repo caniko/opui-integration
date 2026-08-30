@@ -22,7 +22,7 @@ path = "../bevy_openpencil"
 sha = "077922417cdfcea7d70fb602698ae23372c36bd4"
 
 [integration]
-source_tree = "7f3310cde59a53ae6e857ebcf9b1a3ed11cdea1c64ebb54c78227fcc340627b7"
+source_tree = "a360c0a8c56ba10ec3d844c678aa24068b83b68ac3d0dad91710311337edc4cc"
 
 [reference_renderer]
 path = "../openpencil/result/bin/op-reference-renderer"

@@ -11,6 +11,7 @@
 !/generated/showcase.opui
 !/generated/showcase.opui.assets/
 !/generated/showcase.opui.assets/**
+__pycache__/
 *.crate
 *.log
 *.profraw

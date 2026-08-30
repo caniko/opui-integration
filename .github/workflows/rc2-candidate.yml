@@ -63,6 +63,16 @@ jobs:
           test "$(git -C integration rev-parse HEAD)" = "$GITHUB_SHA"
           test -z "$(git -C integration status --porcelain)"
 
+      - name: Bootstrap sibling dependencies
+        env:
+          GH_TOKEN: ""
+          GITHUB_TOKEN: ""
+        working-directory: integration
+        shell: bash
+        run: |
+          python3 tools/test_bootstrap_siblings.py
+          python3 tools/bootstrap_siblings.py
+
       - name: Certify hosted RC2 candidate
         env:
           GH_TOKEN: ""
