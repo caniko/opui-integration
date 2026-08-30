@@ -425,6 +425,7 @@ pub fn import(root: &Path, profile_id: &str, source: &Path) -> Result<PathBuf, S
     let results = ExternalResults::load(source)?;
     results.validate(root, &profile, source)?;
     let destination = root.join(format!("external-results/{profile_id}.toml"));
+    fs::create_dir_all(root.join("external-results")).map_err(|e| e.to_string())?;
     let temporary = destination.with_extension("toml.tmp");
     fs::write(
         &temporary,
@@ -616,6 +617,28 @@ results = []
                 .unwrap_err()
                 .contains("checksum mismatch")
         );
+        fs::remove_dir_all(root).unwrap();
+    }
+
+    #[test]
+    fn import_creates_external_results_directory() {
+        let root =
+            std::env::temp_dir().join(format!("opui-external-import-{}", std::process::id()));
+        fs::create_dir_all(root.join("release-profiles")).unwrap();
+        fs::write(
+            root.join("release-profiles/rc1.toml"),
+            toml::to_string(&profile()).unwrap(),
+        )
+        .unwrap();
+        let source = root.join("result.toml");
+        fs::write(
+            &source,
+            toml::to_string(&results(ExternalStatus::Blocked)).unwrap(),
+        )
+        .unwrap();
+
+        assert!(import(&root, "rc1", &source).unwrap().is_file());
+
         fs::remove_dir_all(root).unwrap();
     }
 
