@@ -1,8 +1,11 @@
+use std::collections::BTreeSet;
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::process::Command;
 
 use serde::{Deserialize, Serialize};
+
+use crate::handoff::VERITASIUM_SHA;
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct LockFile {
@@ -12,6 +15,26 @@ pub struct LockFile {
     pub integration: IntegrationPin,
     pub reference_renderer: RendererPin,
     pub submodules: Vec<SubmodulePin>,
+    pub public_sources: Vec<PublicSourcePin>,
+}
+
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq)]
+#[serde(rename_all = "snake_case")]
+pub enum SourceRelation {
+    Exact,
+    Ancestor,
+}
+
+#[derive(Clone, Debug, Deserialize, Serialize)]
+#[serde(deny_unknown_fields)]
+pub struct PublicSourcePin {
+    pub id: String,
+    pub url: String,
+    #[serde(rename = "ref")]
+    pub git_ref: String,
+    #[serde(default)]
+    pub sha: String,
+    pub relation: SourceRelation,
 }
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
@@ -68,7 +91,216 @@ pub struct LockReport {
 
 pub fn load_lock(path: &Path) -> Result<LockFile, String> {
     let text = fs::read_to_string(path).map_err(|e| format!("{}: {e}", path.display()))?;
-    toml::from_str(&text).map_err(|e| format!("{}: {e}", path.display()))
+    let lock: LockFile = toml::from_str(&text).map_err(|e| format!("{}: {e}", path.display()))?;
+    validate_public_source_policy(&lock)?;
+    Ok(lock)
+}
+
+pub fn public_https_url(url: &str) -> Result<&str, String> {
+    let rest = url
+        .strip_prefix("https://")
+        .ok_or_else(|| format!("public source URL must be unauthenticated HTTPS: {url}"))?;
+    if rest.contains('@')
+        || rest.contains("..")
+        || rest.contains('\\')
+        || rest.is_empty()
+        || !rest.contains('/')
+        || url.contains("file:")
+        || url.contains("ssh:")
+    {
+        return Err(format!("rejected public source URL: {url}"));
+    }
+    Ok(url)
+}
+
+pub fn qualified_ref(git_ref: &str) -> Result<&str, String> {
+    let name = git_ref
+        .strip_prefix("refs/heads/")
+        .or_else(|| git_ref.strip_prefix("refs/tags/"));
+    let Some(name) = name else {
+        return Err(format!(
+            "public source ref must be fully qualified: {git_ref}"
+        ));
+    };
+    if name.is_empty()
+        || name.starts_with('/')
+        || name.ends_with('/')
+        || name.ends_with(".lock")
+        || name.contains("//")
+        || name.contains("..")
+        || name.contains("@{")
+        || !name
+            .bytes()
+            .all(|b| b.is_ascii_alphanumeric() || matches!(b, b'_' | b'.' | b'/' | b'-'))
+    {
+        return Err(format!(
+            "public source ref must be fully qualified: {git_ref}"
+        ));
+    }
+    Ok(git_ref)
+}
+
+pub fn full_sha(sha: &str) -> Result<&str, String> {
+    if sha.len() != 40 || !sha.bytes().all(|b| matches!(b, b'0'..=b'9' | b'a'..=b'f')) {
+        return Err(format!(
+            "public source SHA must be a full 40-hex digest: {sha}"
+        ));
+    }
+    Ok(sha)
+}
+
+pub fn full_sha256(sha: &str) -> Result<&str, String> {
+    if sha.len() != 64 || !sha.bytes().all(|b| matches!(b, b'0'..=b'9' | b'a'..=b'f')) {
+        return Err(format!("hash must be a full lowercase SHA-256: {sha}"));
+    }
+    Ok(sha)
+}
+
+struct ExpectedSource {
+    id: &'static str,
+    url: &'static str,
+    git_ref: &'static str,
+    relation: SourceRelation,
+    sha: Option<String>,
+}
+
+fn repo_sha(lock: &LockFile, id: &str) -> Result<String, String> {
+    lock.repositories
+        .iter()
+        .find(|repo| repo.id == id)
+        .map(|repo| repo.sha.clone())
+        .ok_or_else(|| format!("lock missing repository {id}"))
+}
+
+fn submodule_sha(lock: &LockFile, id: &str) -> Result<String, String> {
+    lock.submodules
+        .iter()
+        .find(|sub| sub.id == id)
+        .map(|sub| sub.sha.clone())
+        .ok_or_else(|| format!("lock missing submodule {id}"))
+}
+
+fn expected_public_sources(lock: &LockFile) -> Result<Vec<ExpectedSource>, String> {
+    Ok(vec![
+        ExpectedSource {
+            id: "opui",
+            url: "https://github.com/caniko/opui.git",
+            git_ref: "refs/heads/trunk",
+            relation: SourceRelation::Exact,
+            sha: Some(repo_sha(lock, "opui")?),
+        },
+        ExpectedSource {
+            id: "opui_contract",
+            url: "https://github.com/caniko/opui.git",
+            git_ref: "refs/heads/feat/opui-v1-contract",
+            relation: SourceRelation::Exact,
+            sha: Some(lock.contract.sha.clone()),
+        },
+        ExpectedSource {
+            id: "openpencil",
+            url: "https://github.com/caniko/openpencil.git",
+            git_ref: "refs/heads/source/opui-v1-rc2",
+            relation: SourceRelation::Exact,
+            sha: Some(repo_sha(lock, "openpencil")?),
+        },
+        ExpectedSource {
+            id: "bevy_openpencil",
+            url: "https://github.com/caniko/bevy_openpencil.git",
+            git_ref: "refs/heads/source/opui-v1-rc2",
+            relation: SourceRelation::Exact,
+            sha: Some(repo_sha(lock, "bevy_openpencil")?),
+        },
+        ExpectedSource {
+            id: "jian",
+            url: "https://github.com/caniko/jian.git",
+            git_ref: "refs/heads/source/opui-v1-rc2",
+            relation: SourceRelation::Exact,
+            sha: Some(submodule_sha(lock, "jian")?),
+        },
+        ExpectedSource {
+            id: "agent",
+            url: "https://github.com/ZSeven-W/agent-rs.git",
+            git_ref: "refs/heads/main",
+            relation: SourceRelation::Ancestor,
+            sha: Some(submodule_sha(lock, "agent")?),
+        },
+        ExpectedSource {
+            id: "casement",
+            url: "https://github.com/ZSeven-W/casement.git",
+            git_ref: "refs/heads/op-file-open",
+            relation: SourceRelation::Exact,
+            sha: Some(submodule_sha(lock, "casement")?),
+        },
+        ExpectedSource {
+            id: "veritasium",
+            url: "https://codeberg.org/caniko/rs-veritasium.git",
+            git_ref: "refs/heads/trunk",
+            relation: SourceRelation::Exact,
+            sha: Some(VERITASIUM_SHA.into()),
+        },
+        ExpectedSource {
+            id: "integration_trunk",
+            url: "https://github.com/caniko/opui-integration.git",
+            git_ref: "refs/heads/trunk",
+            relation: SourceRelation::Ancestor,
+            sha: Some("607c6682996313c8e3f47c46ac52c33c6be39fc6".into()),
+        },
+        ExpectedSource {
+            id: "integration_source",
+            url: "https://github.com/caniko/opui-integration.git",
+            git_ref: "refs/heads/source/opui-v1-rc2",
+            relation: SourceRelation::Exact,
+            sha: None,
+        },
+    ])
+}
+
+pub fn validate_public_source_policy(lock: &LockFile) -> Result<(), String> {
+    let expected = expected_public_sources(lock)?;
+    let mut ids = BTreeSet::new();
+    let mut pairs = BTreeSet::new();
+    for pin in &lock.public_sources {
+        if !ids.insert(pin.id.as_str()) {
+            return Err(format!("duplicate public source {}", pin.id));
+        }
+        if !pairs.insert((pin.url.as_str(), pin.git_ref.as_str())) {
+            return Err(format!(
+                "duplicate public source ref {} {}",
+                pin.url, pin.git_ref
+            ));
+        }
+        public_https_url(&pin.url)?;
+        qualified_ref(&pin.git_ref)?;
+        if !pin.sha.is_empty() {
+            full_sha(&pin.sha)?;
+        }
+    }
+    if lock.public_sources.len() != expected.len() {
+        return Err("public source set mismatch".into());
+    }
+    for exp in &expected {
+        let pin = lock
+            .public_sources
+            .iter()
+            .find(|pin| pin.id == exp.id)
+            .ok_or_else(|| format!("missing public source {}", exp.id))?;
+        if pin.url != exp.url || pin.git_ref != exp.git_ref || pin.relation != exp.relation {
+            return Err(format!("public source {} policy mismatch", exp.id));
+        }
+        match &exp.sha {
+            None if !pin.sha.is_empty() => {
+                return Err(format!(
+                    "public source {} must not pin a source SHA",
+                    exp.id
+                ));
+            }
+            Some(sha) if pin.sha != *sha => {
+                return Err(format!("public source {} sha mismatch", exp.id));
+            }
+            _ => {}
+        }
+    }
+    Ok(())
 }
 
 pub fn git_ref(path: &Path, git_ref: &str) -> Result<String, String> {
@@ -396,5 +628,62 @@ mod tests {
         let lock = load_lock(&root.join("repos.lock.toml")).unwrap();
         let got = git_ref(&root.join(&lock.contract.path), &lock.contract.git_ref).unwrap();
         assert_eq!(got, lock.contract.sha);
+    }
+
+    #[test]
+    fn public_source_policy_rejects_missing_extra_and_duplicate() {
+        let root = Path::new(env!("CARGO_MANIFEST_DIR"));
+        let lock = load_lock(&root.join("repos.lock.toml")).unwrap();
+        validate_public_source_policy(&lock).unwrap();
+
+        let mut missing = lock.clone();
+        missing.public_sources.pop();
+        assert!(
+            validate_public_source_policy(&missing)
+                .unwrap_err()
+                .contains("mismatch")
+        );
+
+        let mut extra = lock.clone();
+        let mut pin = extra.public_sources[0].clone();
+        pin.id = "ghost".into();
+        pin.git_ref = "refs/heads/ghost".into();
+        extra.public_sources.push(pin);
+        assert!(
+            validate_public_source_policy(&extra)
+                .unwrap_err()
+                .contains("mismatch")
+        );
+
+        let mut duplicate = lock.clone();
+        duplicate
+            .public_sources
+            .push(duplicate.public_sources[0].clone());
+        assert!(
+            validate_public_source_policy(&duplicate)
+                .unwrap_err()
+                .contains("duplicate")
+        );
+
+        let mut drifted = lock.clone();
+        drifted.public_sources[0].sha = "0".repeat(40);
+        assert!(
+            validate_public_source_policy(&drifted)
+                .unwrap_err()
+                .contains("sha mismatch")
+        );
+
+        let mut cycled = lock.clone();
+        let integration = cycled
+            .public_sources
+            .iter_mut()
+            .find(|pin| pin.id == "integration_source")
+            .unwrap();
+        integration.sha = "1".repeat(40);
+        assert!(
+            validate_public_source_policy(&cycled)
+                .unwrap_err()
+                .contains("must not pin")
+        );
     }
 }

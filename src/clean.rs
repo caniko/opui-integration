@@ -113,6 +113,7 @@ fn certify_release_clean_once(root: &Path, profile: &str) -> Result<CleanRelease
     let renderer = renderer_output.join("bin/op-reference-renderer");
     let raster = raster_output.join("bin/op");
     let renderer_hash = sha256_file(&renderer)?;
+    let raster_hash = sha256_file(&raster)?;
     if renderer_hash != lock.reference_renderer.sha256 {
         return Err(format!(
             "clean renderer hash {renderer_hash} != locked {}",
@@ -125,6 +126,14 @@ fn certify_release_clean_once(root: &Path, profile: &str) -> Result<CleanRelease
             raster.display()
         ));
     }
+    let pinned_renderer = clean_root.join(&lock.reference_renderer.path);
+    fs::create_dir_all(
+        pinned_renderer
+            .parent()
+            .ok_or("locked renderer has no parent")?,
+    )
+    .map_err(|e| e.to_string())?;
+    fs::copy(&renderer, &pinned_renderer).map_err(|e| e.to_string())?;
 
     for repo in [
         &clean_root,
@@ -182,6 +191,7 @@ fn certify_release_clean_once(root: &Path, profile: &str) -> Result<CleanRelease
                 "sha256": renderer_hash,
             },
             "raster_exporter": raster_output,
+            "raster_exporter_sha256": raster_hash,
             "fresh_cargo_home": true,
             "fresh_target": true,
             "aggregate_success": aggregate_success,
@@ -236,13 +246,9 @@ fn cargo_command(
         .env("OPUI_RASTER_EXPORTER", raster)
         .env("OPENPENCIL_OP", raster)
         .env("NIX_USER_CONF_FILES", "/dev/null")
-        .env("LD_LIBRARY_PATH", "/run/opengl-driver/lib")
-        .env(
-            "VK_DRIVER_FILES",
-            "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json",
-        )
         .env_remove("CARGO_PROFILE_DEV_CODEGEN_BACKEND")
         .env_remove("LIBRARY_PATH")
+        .env_remove("VK_ICD_FILENAMES")
         .env("XDG_CACHE_HOME", run_root.with_file_name("xdg-cache"));
     command
 }

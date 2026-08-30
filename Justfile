@@ -98,6 +98,9 @@ certify-rc1-clean:
 certify-rc2:
     nix --option min-free 0 --option max-free 0 develop .#graphical --command cargo run --quiet --bin opui-certify -- --release-profile rc2
 
+certify-rc2-clean:
+    nix --option min-free 0 --option max-free 0 develop .#graphical --command cargo run --quiet --bin opui-certify -- --release-clean-profile rc2
+
 assess-stable-v1:
     cargo run --quiet --bin opui-handoff -- assess stable-v1 release/release-1787882067758 handoff/stable-v1-readiness-0.1.0-rc.1.json
 
@@ -112,6 +115,33 @@ rehearse-rc2-publication CAPSULE OUTPUT="handoff/rc2-publication-rehearsal":
 
 import-rc1-external RESULT:
     cargo run --quiet --bin opui-handoff -- import-external rc1 {{RESULT}}
+
+import-rc2-external RESULT:
+    cargo run --quiet --bin opui-handoff -- import-external rc2 {{RESULT}}
+
+hosted-rc2-candidate:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    test "${GITHUB_ACTIONS:-}" = true
+    test "${RUNNER_ENVIRONMENT:-}" = github-hosted
+    test "${GITHUB_EVENT_NAME:-}" = workflow_dispatch
+    test "${GITHUB_REF:-}" = refs/heads/source/opui-v1-rc2
+    test "$(git rev-parse HEAD)" = "${GITHUB_SHA:-}"
+    test "$(cargo --version | cut -d' ' -f1-2)" = "cargo 1.95.0"
+    test "$(rustc -vV | sed -n 's/^release: //p')" = "1.95.0"
+    cargo run --quiet --bin opui-handoff -- materialize-public
+    cargo run --quiet --bin opui-certify -- --verify-lock-strict
+    capsule="$(cargo run --quiet --bin opui-certify -- --release-clean-profile rc2)"
+    test -f "$capsule/complete"
+    evidence="handoff/hosted-${GITHUB_RUN_ID}"
+    mkdir -p "$evidence"
+    cargo run --quiet --bin opui-handoff -- rehearse-rc2 "$capsule" "$evidence/rehearsal"
+    cargo run --quiet --bin opui-handoff -- close-public-sources "$capsule" "$evidence/public-source-closure.json" "$evidence/rehearsal"
+    cargo run --quiet --bin opui-handoff -- generate-rc2-external "$capsule" "$evidence/public-source-closure.json" "$evidence/external-results-rc2.toml"
+    cargo run --quiet --bin opui-handoff -- import-external rc2 "$evidence/external-results-rc2.toml"
+    cargo run --quiet --bin opui-handoff -- assess rc2 "$capsule" "$evidence/rc2-assessment.json"
+    cargo run --quiet --bin opui-handoff -- bundle-index "$evidence/bundle-index.json" "$capsule" "$evidence"
+    cargo run --quiet --bin opui-handoff -- verify-bundle-index "$evidence/bundle-index.json"
 
 ci-rc1:
     cargo fmt --all --check

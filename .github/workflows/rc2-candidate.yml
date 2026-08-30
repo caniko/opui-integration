@@ -1,0 +1,84 @@
+name: OPUI RC2 Candidate
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: opui-rc2-candidate-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  rc2-candidate:
+    name: RC2 candidate (ubuntu-24.04)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    env:
+      CARGO_HOME: ${{ github.workspace }}/.cargo-home
+      CARGO_TERM_COLOR: always
+      GIT_CONFIG_GLOBAL: /dev/null
+      GIT_CONFIG_NOSYSTEM: "1"
+      GIT_TERMINAL_PROMPT: "0"
+      RUSTUP_HOME: ${{ github.workspace }}/.rustup-home
+      RUSTUP_TOOLCHAIN: 1.95.0
+
+    steps:
+      - name: Verify dispatch identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_EVENT_NAME" = workflow_dispatch
+          test "$GITHUB_REF" = refs/heads/source/opui-v1-rc2
+          test "$GITHUB_REPOSITORY" = caniko/opui-integration
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@c5a866b6ab867e88becbed4467b93592bce69f8a
+        with:
+          determinate: false
+          diagnostic-endpoint: ""
+          github-token: ""
+          kvm: false
+          trust-runner-user: false
+
+      - name: Install exact stable Rust
+        shell: bash
+        run: |
+          set -euo pipefail
+          rustup toolchain install 1.95.0 --profile minimal --component clippy,rustfmt,rust-src
+          rustup toolchain install nightly-2026-04-14 --profile minimal --component rust-src
+          test "$(cargo --version | cut -d' ' -f1-2)" = "cargo 1.95.0"
+          test "$(rustc -vV | sed -n 's/^release: //p')" = "1.95.0"
+          test "$(rustc +nightly-2026-04-14 -vV | sed -n 's/^release: //p')" = "1.97.0-nightly"
+
+      - name: Clone candidate without credentials
+        env:
+          GH_TOKEN: ""
+          GITHUB_TOKEN: ""
+        shell: bash
+        run: |
+          set -euo pipefail
+          git -c credential.helper= -c http.extraHeader= clone --single-branch --branch source/opui-v1-rc2 -- https://github.com/caniko/opui-integration.git integration
+          test "$(git -C integration rev-parse HEAD)" = "$GITHUB_SHA"
+          test -z "$(git -C integration status --porcelain)"
+
+      - name: Certify hosted RC2 candidate
+        env:
+          GH_TOKEN: ""
+          GITHUB_TOKEN: ""
+        working-directory: integration
+        shell: bash
+        run: nix develop .#graphical --command just hosted-rc2-candidate
+
+      - name: Upload evidence
+        id: evidence
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        with:
+          name: opui-rc2-wave-b2-${{ github.run_id }}
+          path: |
+            integration/release/
+            integration/handoff/hosted-${{ github.run_id }}/
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 6

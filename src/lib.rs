@@ -9,6 +9,7 @@ pub mod image_metrics;
 pub mod lock;
 pub mod package;
 pub mod package_preflight;
+pub mod public_source;
 pub mod rehearsal;
 pub mod release_artifacts;
 pub mod release_profile;

@@ -22,7 +22,7 @@ path = "../bevy_openpencil"
 sha = "077922417cdfcea7d70fb602698ae23372c36bd4"
 
 [integration]
-source_tree = "75b265b626aecf5e8216cf93398e1e92972a8d296f9293d44903f4682a7eea53"
+source_tree = "7f3310cde59a53ae6e857ebcf9b1a3ed11cdea1c64ebb54c78227fcc340627b7"
 
 [reference_renderer]
 path = "../openpencil/result/bin/op-reference-renderer"
@@ -46,3 +46,72 @@ id = "jian"
 path = "../openpencil/vendor/jian"
 sha = "ba334d27edf05b7e4c7a2746fc3c664d9ed24f28"
 allowed_dev_dirt = false
+
+[[public_sources]]
+id = "opui"
+url = "https://github.com/caniko/opui.git"
+ref = "refs/heads/trunk"
+sha = "04fdda1c8a2dabd4fad3ee66dd9043f44ed8509c"
+relation = "exact"
+
+[[public_sources]]
+id = "opui_contract"
+url = "https://github.com/caniko/opui.git"
+ref = "refs/heads/feat/opui-v1-contract"
+sha = "f4b6dc6df431efae9245be51b6c08c828339b007"
+relation = "exact"
+
+[[public_sources]]
+id = "openpencil"
+url = "https://github.com/caniko/openpencil.git"
+ref = "refs/heads/source/opui-v1-rc2"
+sha = "9cf33260ecdf532e422834739cfdd1cb012b20b7"
+relation = "exact"
+
+[[public_sources]]
+id = "bevy_openpencil"
+url = "https://github.com/caniko/bevy_openpencil.git"
+ref = "refs/heads/source/opui-v1-rc2"
+sha = "077922417cdfcea7d70fb602698ae23372c36bd4"
+relation = "exact"
+
+[[public_sources]]
+id = "jian"
+url = "https://github.com/caniko/jian.git"
+ref = "refs/heads/source/opui-v1-rc2"
+sha = "ba334d27edf05b7e4c7a2746fc3c664d9ed24f28"
+relation = "exact"
+
+[[public_sources]]
+id = "agent"
+url = "https://github.com/ZSeven-W/agent-rs.git"
+ref = "refs/heads/main"
+sha = "5c0f9506e27be5b4f29cd2c1093e2858ad0fa20c"
+relation = "ancestor"
+
+[[public_sources]]
+id = "casement"
+url = "https://github.com/ZSeven-W/casement.git"
+ref = "refs/heads/op-file-open"
+sha = "451173eb3353a4166d2d0f241f2e0606051064bd"
+relation = "exact"
+
+[[public_sources]]
+id = "veritasium"
+url = "https://codeberg.org/caniko/rs-veritasium.git"
+ref = "refs/heads/trunk"
+sha = "7cd58438d458d3e701c32d5d5ae0c7b1f70a2bc0"
+relation = "exact"
+
+[[public_sources]]
+id = "integration_trunk"
+url = "https://github.com/caniko/opui-integration.git"
+ref = "refs/heads/trunk"
+sha = "607c6682996313c8e3f47c46ac52c33c6be39fc6"
+relation = "ancestor"
+
+[[public_sources]]
+id = "integration_source"
+url = "https://github.com/caniko/opui-integration.git"
+ref = "refs/heads/source/opui-v1-rc2"
+relation = "exact"

@@ -30,6 +30,7 @@
           pkgs.libinput
           pkgs.mesa
           pkgs.pkg-config
+          pkgs.rustup
           pkgs.vulkan-loader
           pkgs.wayland
           pkgs.weston

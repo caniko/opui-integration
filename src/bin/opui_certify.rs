@@ -1657,8 +1657,11 @@ fn release_commands(root: &Path, release: &Path, profile_id: &str) -> Vec<Releas
             commands.push(command(
                 id,
                 bevy.clone(),
-                "cargo",
+                "rustup",
                 &[
+                    "run",
+                    "nightly-2026-04-14",
+                    "cargo",
                     "public-api",
                     "--manifest-path",
                     "Cargo.toml",

@@ -3,7 +3,7 @@ use std::path::{Path, PathBuf};
 use std::process::{Command, Output};
 use std::time::{SystemTime, UNIX_EPOCH};
 
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::cert::sha256_file;
 
@@ -21,7 +21,26 @@ pub struct PackagePreflight {
     pub runtime_has_path_dependencies: bool,
     pub downstream_consumer: bool,
     pub runtime_adopter: bool,
+    #[serde(skip_serializing_if = "is_false")]
+    pub package_metadata_validated: bool,
+    #[serde(skip_serializing_if = "is_false")]
+    pub vcs_metadata_validated: bool,
     pub status: &'static str,
+}
+
+#[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
+struct CargoVcsInfo {
+    git: CargoVcsGit,
+    path_in_vcs: String,
+}
+
+#[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
+struct CargoVcsGit {
+    sha1: String,
+    #[serde(default)]
+    dirty: bool,
 }
 
 struct TempRoot(PathBuf);
@@ -136,8 +155,14 @@ pub fn run_package_preflight(root: &Path) -> Result<PackagePreflight, String> {
         runtime_has_path_dependencies: false,
         downstream_consumer: true,
         runtime_adopter: true,
+        package_metadata_validated: false,
+        vcs_metadata_validated: false,
         status: "pass",
     })
+}
+
+fn is_false(value: &bool) -> bool {
+    !value
 }
 
 pub fn build_package_archives(root: &Path, destination: &Path) -> Result<Vec<PathBuf>, String> {
@@ -248,6 +273,8 @@ pub fn run_rc2_package_preflight(root: &Path) -> Result<PackagePreflight, String
         runtime_has_path_dependencies: false,
         downstream_consumer: true,
         runtime_adopter: true,
+        package_metadata_validated: true,
+        vcs_metadata_validated: true,
         status: "pass",
     })
 }
@@ -291,11 +318,84 @@ fn package_rc2(root: &Path) -> Result<Rc2Packaged, String> {
     require_success("rc2 workspace package", &package)?;
     let schema_crate = crate_file(&target, "openpencil_ui_schema")?;
     let runtime_crate = crate_file(&target, "bevy_openpencil")?;
+    let expected_sha = crate::lock::load_lock(&root.join("repos.lock.toml"))?
+        .repositories
+        .into_iter()
+        .find(|repo| repo.id == "bevy_openpencil")
+        .ok_or("lock has no bevy_openpencil repository")?
+        .sha;
+    validate_rc2_archive(
+        &schema_crate,
+        &temp.0.join("schema-identity"),
+        "openpencil_ui_schema",
+        "crates/openpencil_ui_schema",
+        &expected_sha,
+    )?;
+    validate_rc2_archive(
+        &runtime_crate,
+        &temp.0.join("runtime-identity"),
+        "bevy_openpencil",
+        "crates/bevy_openpencil",
+        &expected_sha,
+    )?;
     Ok(Rc2Packaged {
         schema_crate,
         runtime_crate,
         temp,
     })
+}
+
+fn validate_rc2_archive(
+    archive: &Path,
+    destination: &Path,
+    name: &str,
+    path_in_vcs: &str,
+    expected_sha: &str,
+) -> Result<(), String> {
+    unpack(archive, destination)?;
+    let root = destination.join(format!("{name}-{RC2_VERSION}"));
+    validate_rc2_identity_root(&root, name, path_in_vcs, expected_sha)
+}
+
+fn validate_rc2_identity_root(
+    root: &Path,
+    name: &str,
+    path_in_vcs: &str,
+    expected_sha: &str,
+) -> Result<(), String> {
+    let manifest: toml::Value =
+        toml::from_str(&fs::read_to_string(root.join("Cargo.toml")).map_err(|e| e.to_string())?)
+            .map_err(|e| e.to_string())?;
+    let package = manifest["package"]
+        .as_table()
+        .ok_or("normalized package manifest has no package table")?;
+    for (field, expected) in [
+        ("name", name),
+        ("version", RC2_VERSION),
+        ("rust-version", "1.95"),
+        ("license", "MIT"),
+        ("readme", "README.md"),
+        ("repository", "https://github.com/caniko/bevy_openpencil"),
+        ("homepage", "https://github.com/caniko/bevy_openpencil"),
+    ] {
+        let actual = package.get(field).and_then(toml::Value::as_str);
+        if actual != Some(expected) {
+            return Err(format!(
+                "normalized {name} package {field} is {actual:?}, expected {expected}"
+            ));
+        }
+    }
+    let vcs: CargoVcsInfo = serde_json::from_slice(
+        &fs::read(root.join(".cargo_vcs_info.json")).map_err(|e| e.to_string())?,
+    )
+    .map_err(|e| e.to_string())?;
+    if vcs.git.sha1 != expected_sha || vcs.git.dirty || vcs.path_in_vcs != path_in_vcs {
+        return Err(format!(
+            "{name} VCS metadata mismatch: sha={} dirty={} path={}",
+            vcs.git.sha1, vcs.git.dirty, vcs.path_in_vcs
+        ));
+    }
+    Ok(())
 }
 
 fn check_downstream_consumer(temp: &Path, runtime: &Path, schema: &Path) -> Result<(), String> {
@@ -607,5 +707,54 @@ mod tests {
         .unwrap();
         assert!(validate_consumer_bevy_pin(&lock).is_err());
         let _ = fs::remove_file(lock);
+    }
+
+    #[test]
+    fn rc2_identity_rejects_dirty_vcs_metadata() {
+        let root =
+            std::env::temp_dir().join(format!("opui-package-identity-{}", std::process::id()));
+        let package = root.join(format!("bevy_openpencil-{RC2_VERSION}"));
+        fs::create_dir_all(&package).unwrap();
+        fs::write(
+            package.join("Cargo.toml"),
+            r#"[package]
+name = "bevy_openpencil"
+version = "0.1.0-rc.2"
+rust-version = "1.95"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/caniko/bevy_openpencil"
+homepage = "https://github.com/caniko/bevy_openpencil"
+"#,
+        )
+        .unwrap();
+        fs::write(
+            package.join(".cargo_vcs_info.json"),
+            r#"{"git":{"sha1":"077922417cdfcea7d70fb602698ae23372c36bd4","dirty":true},"path_in_vcs":"crates/bevy_openpencil"}"#,
+        )
+        .unwrap();
+        assert!(
+            validate_rc2_identity_root(
+                &package,
+                "bevy_openpencil",
+                "crates/bevy_openpencil",
+                "077922417cdfcea7d70fb602698ae23372c36bd4",
+            )
+            .unwrap_err()
+            .contains("dirty=true")
+        );
+        fs::write(
+            package.join(".cargo_vcs_info.json"),
+            r#"{"git":{"sha1":"077922417cdfcea7d70fb602698ae23372c36bd4"},"path_in_vcs":"crates/bevy_openpencil"}"#,
+        )
+        .unwrap();
+        validate_rc2_identity_root(
+            &package,
+            "bevy_openpencil",
+            "crates/bevy_openpencil",
+            "077922417cdfcea7d70fb602698ae23372c36bd4",
+        )
+        .unwrap();
+        let _ = fs::remove_dir_all(root);
     }
 }
