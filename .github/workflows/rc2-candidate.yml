@@ -83,6 +83,7 @@ jobs:
 
       - name: Upload evidence
         id: evidence
+        if: always()
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         with:
           name: opui-rc2-wave-b2-${{ github.run_id }}
